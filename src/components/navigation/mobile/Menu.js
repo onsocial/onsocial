@@ -214,9 +214,9 @@ export function Menu(props) {
             </NavigationButton>
           </li>
           <li>
-            <NavigationButton href={props.documentationHref}>
+             <NavigationButton href="https://www.vfdao.org/how-it-works" target="_blank">
               <Book />
-              Documentation
+              How it Works
             </NavigationButton>
           </li>
         </ul>
