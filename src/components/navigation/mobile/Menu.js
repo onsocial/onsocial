@@ -208,12 +208,6 @@ export function Menu(props) {
             </NavigationButton>
           </li>
           <li>
-            <NavigationButton route="/edit">
-              <Code />
-              Editor
-            </NavigationButton>
-          </li>
-          <li>
              <NavigationButton href="https://www.vfdao.org/how-it-works" target="_blank">
               <Book />
               How it Works
