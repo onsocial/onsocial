@@ -77,7 +77,7 @@ export function DesktopNavigation(props) {
         <div className="navigation-section">
           <NavigationButton route="/">Home</NavigationButton>
           <NavigationButton href={props.documentationHref}>
-            Docs
+            How it Works
             <ArrowUpRight />
           </NavigationButton>
         </div>
