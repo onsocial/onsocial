@@ -60,7 +60,7 @@ export function Navigation(props) {
       </Link>
       {props.signedIn ? (
         <div className="d-flex">
-          <StarButton {...props} />
+          
           <NotificationWidget
             notificationButtonSrc={props.widgets.notificationButton}
           />
