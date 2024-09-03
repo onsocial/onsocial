@@ -82,7 +82,6 @@ export function DesktopNavigation(props) {
         </div>
         <div className="user-section">
          
-          <DevActionsDropdown {...props} />
           {!props.signedIn && (
             <SignInButton onSignIn={() => props.requestSignIn()} />
           )}
