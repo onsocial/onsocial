@@ -215,17 +215,7 @@ export function Menu(props) {
           </li>
         </ul>
         <ul className="bottom-links">
-          {props.widgetSrc?.edit && (
-            <li>
-              <Link to={`/edit/${props.widgetSrc?.edit}`}>
-                <Fork />
-                {props.widgetSrc.edit.startsWith(
-                  `${props.signedAccountId}/widget/`
-                )
-               ? "Edit widget"
-                 
-            </li>   
-          )}
+         
           {props.signedIn && (
             <li>
               <button onClick={() => props.logOut()} className="log-out-button">
