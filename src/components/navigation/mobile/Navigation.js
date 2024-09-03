@@ -5,7 +5,7 @@ import { MobileMenuButton } from "./MobileMenuButton";
 import { NearSocialLogo } from "../../icons/NearSocialLogo";
 import { NotificationWidget } from "../NotificationWidget";
 import { SignInButton } from "../SignInButton";
-
+import { StarButton } from "../StarButton";
 
 const StyledNavigation = styled.div`
   position: sticky;
