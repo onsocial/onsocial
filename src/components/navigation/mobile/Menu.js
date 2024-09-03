@@ -222,7 +222,9 @@ export function Menu(props) {
                 {props.widgetSrc.edit.startsWith(
                   `${props.signedAccountId}/widget/`
                 )
+               ? "Edit widget"
                  
+            </li>   
           )}
           {props.signedIn && (
             <li>
