@@ -222,20 +222,7 @@ export function Menu(props) {
                 {props.widgetSrc.edit.startsWith(
                   `${props.signedAccountId}/widget/`
                 )
-                  ? "Edit widget"
-                  : "Fork widget"}
-              </Link>
-            </li>
-          )}
-          {props.widgetSrc?.view && (
-            <li>
-              <Link
-                to={`/${props.widgets.viewSource}?src=${props.widgetSrc?.view}`}
-              >
-                <Code />
-                View source
-              </Link>
-            </li>
+                 
           )}
           {props.signedIn && (
             <li>
