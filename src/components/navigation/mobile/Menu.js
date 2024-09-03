@@ -238,26 +238,12 @@ export function Menu(props) {
             </li>
           )}
           {props.signedIn && (
-            <>
-              <li>
-                <button
-                  className="log-out-button"
-                  onClick={() => withdrawStorage()}
-                >
-                  <Withdraw />
-                  Withdraw {props.availableStorage.div(1000).toFixed(2)}kb
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => props.logOut()}
-                  className="log-out-button"
-                >
-                  <LogOut />
-                  Sign Out
-                </button>
-              </li>
-            </>
+            <li>
+              <button onClick={() => props.logOut()} className="log-out-button">
+                <LogOut />
+                Sign Out
+              </button>
+            </li>
           )}
         </ul>
         <button className="close-button" onClick={props.onCloseMenu}>
