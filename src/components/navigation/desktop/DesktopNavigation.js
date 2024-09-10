@@ -75,6 +75,8 @@ export function DesktopNavigation(props) {
         </Link>
         <div className="navigation-section">
           <NavigationButton route="/">Home</NavigationButton>
+ <NavigationButton route="/veganfriends.near/widget/donate-to">Charity</NavigationButton>
+
           <NavigationButton href={props.documentationHref}>
             How it Works
             <ArrowUpRight />
