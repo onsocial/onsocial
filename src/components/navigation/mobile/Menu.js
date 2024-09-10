@@ -36,7 +36,7 @@ const StyledMenu = styled.div`
 
   .left-side {
     flex: 80;
-    background-color: var(--slate-dark-1);
+    background-color: white;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -61,13 +61,15 @@ const StyledMenu = styled.div`
     }
 
     .profile-name {
-      color: var(--slate-dark-12);
+      color: black;
       font-weight: var(--font-weight-bold);
       margin-top: 10px;
     }
 
     .profile-username {
       color: var(--slate-dark-11);
+    }
+
     }
 
     .profile-name,
@@ -96,11 +98,11 @@ const StyledMenu = styled.div`
       &:hover,
       &:focus {
         background-color: transparent;
-        color: white;
+        color: black;
         text-decoration: none;
         svg {
           path {
-            stroke: white;
+            stroke: black;
           }
         }
       }
