@@ -5,6 +5,7 @@ import { Home } from "../../icons/Home";
 import { Book } from "../../icons/Book";
 import { Wallet } from "../../icons/Wallet";
 import { VFLabs } from "../../icons/VFLabs";
+import { Charity } from "../../icons/Charity";
 import { Code } from "../../icons/Code";
 import { LogOut } from "../../icons/LogOut";
 import { Fork } from "../../icons/Fork";
@@ -211,12 +212,19 @@ export function Menu(props) {
             </NavigationButton>
           </li>
           <li>
-<NavigationButton route="/bos.genadrop.near/widget/Mintbase.App.Index?page=contract&tab=nfts&accountId=vflabs.mintbase1.near">
+<NavigationButton route="/veganfriends.near/widget/donate-to">
               <VFLabs />
               VF Labs
             </NavigationButton>
           </li>
           <li>
+<NavigationButton route="/veganfriends.near/widget/donate-to">
+              <Charity />
+              Charity
+            </NavigationButton>
+          </li>
+          <li>
+
              <NavigationButton href="https://www.vfdao.org/how-it-works" target="_blank">
               <Book />
               How it Works
