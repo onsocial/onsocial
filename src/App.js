@@ -35,7 +35,7 @@ import SignInPage from "./pages/SignInPage";
 import { isValidAttribute } from "dompurify";
 
 export const refreshAllowanceObj = {};
-const documentationHref = "https://www.vfdao.org/how-it-works";
+const documentationHref = "https://vfdao.org/how-it-works";
 
 const getNetworkPreset = (networkId) => {
   switch (networkId) {
