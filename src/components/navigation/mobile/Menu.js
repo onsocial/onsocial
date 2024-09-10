@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Close } from "../../icons/Close";
 import { Home } from "../../icons/Home";
 import { Book } from "../../icons/Book";
+import { Wallet } from "../../icons/Wallet";
 import { Code } from "../../icons/Code";
 import { LogOut } from "../../icons/LogOut";
 import { Fork } from "../../icons/Fork";
@@ -43,6 +44,7 @@ const StyledMenu = styled.div`
     padding: 25px;
     overflow-x: auto;
 
+
     .nav-sign-in-btn {
       width: fit-content;
     }
@@ -68,8 +70,6 @@ const StyledMenu = styled.div`
 
     .profile-username {
       color: var(--slate-dark-11);
-    }
-
     }
 
     .profile-name,
@@ -213,6 +213,12 @@ export function Menu(props) {
              <NavigationButton href="https://www.vfdao.org/how-it-works" target="_blank">
               <Book />
               How it Works
+            </NavigationButton>
+          </li>
+	<li>
+             <NavigationButton href="https://wallet.bitte.ai" target="_blank">
+              <Wallet />
+              My Bitte Wallet
             </NavigationButton>
           </li>
         </ul>
