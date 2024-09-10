@@ -4,6 +4,7 @@ import { Close } from "../../icons/Close";
 import { Home } from "../../icons/Home";
 import { Book } from "../../icons/Book";
 import { Wallet } from "../../icons/Wallet";
+import { Wallet } from "../../icons/VFLabs";
 import { Code } from "../../icons/Code";
 import { LogOut } from "../../icons/LogOut";
 import { Fork } from "../../icons/Fork";
