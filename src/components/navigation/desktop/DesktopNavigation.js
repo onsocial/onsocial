@@ -79,6 +79,11 @@ export function DesktopNavigation(props) {
             How it Works
             <ArrowUpRight />
           </NavigationButton>
+ <NavigationButton href={"https://wallet.bitte.ai"}>
+            My Bitte Wallet
+            <ArrowUpRight />
+          </NavigationButton>
+
         </div>
         <div className="user-section">
          
