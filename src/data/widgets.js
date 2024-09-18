@@ -25,7 +25,7 @@ const MainnetWidgets = {
   widgetMetadataEditor: "mob.near/widget/WidgetMetadataEditor",
   widgetMetadata: "mob.near/widget/WidgetMetadata",
   profileImage: "mob.near/widget/ProfileImage",
-  notificationButton: "mob.near/widget/NotificationButton",
+  notificationButton: "vfdao.near/widget/NotificationButton",
   profilePage: "vfdao.near/widget/ProfilePage",
   profileName: "patrick.near/widget/ProfileName",
   editorComponentSearch: "mob.near/widget/Editor.ComponentSearch",
