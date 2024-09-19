@@ -78,7 +78,7 @@ export function DesktopNavigation(props) {
  <NavigationButton route="/veganfriends.near/widget/donate-to">Charity</NavigationButton>
 
           <NavigationButton href={props.documentationHref}>
-            How it Works
+            VF Labs
             <ArrowUpRight />
           </NavigationButton>
  <NavigationButton href={"https://wallet.bitte.ai"}>
