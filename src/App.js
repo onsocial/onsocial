@@ -35,7 +35,7 @@ import SignInPage from "./pages/SignInPage";
 import { isValidAttribute } from "dompurify";
 
 export const refreshAllowanceObj = {};
-const documentationHref = "https://vfdao.org/how-it-works";
+const documentationHref = "https://www.mintbase.xyz/contract/vflabs.mintbase1.near/nfts/all/0";
 
 const getNetworkPreset = (networkId) => {
   switch (networkId) {
