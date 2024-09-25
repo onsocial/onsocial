@@ -225,9 +225,9 @@ export function Menu(props) {
           </li>
           <li>
 
-             <NavigationButton href="https://www.vfdao.org/how-it-works" target="_blank">
+             <NavigationButton href="https://www.mintbase.xyz/contract/veganfriends.mintbase1.near/nfts/all/0" target="_blank">
               <Book />
-              How it Works
+              Artwork Donation
             </NavigationButton>
           </li>
 	<li>
