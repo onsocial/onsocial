@@ -218,9 +218,9 @@ export function Menu(props) {
             </NavigationButton>
           </li>
           <li>
-<NavigationButton route="/veganfriends.near/widget/donate-to">
+<NavigationButton route="/vfdao.near/widget/Charities.Group">
               <Charity />
-              Charity
+              Charities
             </NavigationButton>
           </li>
           <li>
