@@ -225,7 +225,7 @@ export function Menu(props) {
           </li>
           <li>
 
-             <NavigationButton route="/vfdao.near/widget/Mintbase.App.Index">
+             <NavigationButton route="/vfdao.near/widget/Mintbase.Mini.Index">
               <Book />
               Artwork Donation
             </NavigationButton>
