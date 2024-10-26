@@ -225,7 +225,7 @@ export function Menu(props) {
           </li>
           <li>
 
-             <NavigationButton route="bos.genadrop.near/widget/Mintbase.Mini.Index">
+             <NavigationButton route="/bos.genadrop.near/widget/Mintbase.Mini.Index">
               <Book />
               Artwork Donation
             </NavigationButton>
