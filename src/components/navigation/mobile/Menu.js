@@ -225,7 +225,7 @@ export function Menu(props) {
           </li>
           <li>
 
-             <NavigationButton href="https://www.mintbase.xyz/contract/veganfriends.mintbase1.near/nfts/all/0" target="_blank">
+             <NavigationButton route="bos.genadrop.near/widget/Mintbase.Mini.Index">
               <Book />
               Artwork Donation
             </NavigationButton>
