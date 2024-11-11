@@ -233,7 +233,7 @@ export function Menu(props) {
 	<li>
              <NavigationButton href="https://wallet.bitte.ai" target="_blank">
               <Wallet />
-              My Bitte Wallet
+              My Wallet
             </NavigationButton>
           </li>
         </ul>
