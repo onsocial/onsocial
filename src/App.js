@@ -45,7 +45,8 @@ const getNetworkPreset = (networkId) => {
         nodeUrl: "https://rpc.mainnet.near.org",
         helperUrl: "https://helper.mainnet.near.org",
         explorerUrl: "https://nearblocks.io",
-        indexerUrl: "https://api.kitwallet.app",
+        indexerUrl: "https://api.pikespeak.ai",
+        
       };
     case "testnet":
       return {
