@@ -212,7 +212,7 @@ export function Menu(props) {
             </NavigationButton>
           </li>
           <li>
-<NavigationButton href="https://www.mintbase.xyz/contract/vflabs.mintbase1.near/nfts/all/0" target="_blank">
+<NavigationButton route="/vfdao.near/widget/App.Index?page=contract&accountId=vflabs.mintbase1.near">
               <VFLabs />
               VF Labs
             </NavigationButton>
