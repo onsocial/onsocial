@@ -75,7 +75,7 @@ export function DesktopNavigation(props) {
         </Link>
         <div className="navigation-section">
           <NavigationButton route="/">Home</NavigationButton>
- <NavigationButton route="/vfdao.near/widget/Charities.Group</NavigationButton>
+ <NavigationButton route="/vfdao.near/widget/Charities.Group">Charities</NavigationButton>
 
           <NavigationButton href={props.documentationHref}>
             VF Labs
