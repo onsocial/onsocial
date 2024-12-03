@@ -75,12 +75,9 @@ export function DesktopNavigation(props) {
         </Link>
         <div className="navigation-section">
           <NavigationButton route="/">Home</NavigationButton>
+          <NavigationButton route="/vfdao.near/widget/App.Index?page=contract&accountId=vflabs.mintbase1.near">VF Labs</NavigationButton>
  <NavigationButton route="/vfdao.near/widget/Charities.Group">Charities</NavigationButton>
-
-          <NavigationButton href={props.documentationHref}>
-            VF Labs
-            <ArrowUpRight />
-          </NavigationButton>
+             <NavigationButton route="/vfdao.near/widget/Creatives.Group">Creatives</NavigationButton>
  <NavigationButton href={"https://wallet.bitte.ai"}>
             My Bitte Wallet
             <ArrowUpRight />
