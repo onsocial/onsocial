@@ -14,15 +14,14 @@ const StyledNavigation = styled.div`
   right: 0;
   width: 100%;
   z-index: 1000;
-  padding: 12px 24px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-
   background-color: ${({ scrolled }) => (scrolled ? 'white' : 'white')};
- 
   transform: ${({ hide }) => (hide ? 'translateY(-100%)' : 'translateY(0)')};
+  max-height: 45px;  // Limit the height of the navbar
 
   .logo-link {
     position: absolute;
@@ -40,9 +39,11 @@ const StyledNavigation = styled.div`
   }
 
   .nav-sign-in-btn {
-    background: none;
-    border: none;
-    padding-right: 0;
+    // Styling for the sign-in button
+  }
+
+  .nav-sign-in-btn:hover {
+    background: black; /* Change to black on hover */
   }
 `;
 

@@ -4,11 +4,11 @@ import { Widget } from "near-social-vm";
 
 const StyledNotificationWidget = styled.div`
   margin: 0 15px;
-  background-color: #D7D7DE;
-  height: 40px;
-  width: 40px;
+  background-color: transparent;
+  height:20px;
+  width:20px;
   border-radius: 50%;
-transition: background-color 0.3s, color 0.3s;
+
 
 
   > div,
@@ -24,14 +24,14 @@ transition: background-color 0.3s, color 0.3s;
     justify-content: center;
 
     i {
-      font-size: 18px !important;
+      font-size: 20px !important;
     }
   }
 
   :hover {
     a,
     i {
-      color: white;
+      color: #D7D7DE; 
     }
   }
 `;
