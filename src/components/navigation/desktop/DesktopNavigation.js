@@ -16,7 +16,7 @@ const StyledNavigation = styled.div`
   width: 100%;
   background-color: white;
   z-index: 1000;
-  padding: 2px 0;
+  padding: 6px 0;
   border-bottom: 1px solid white;
   transition: transform 0.3s ease;
 

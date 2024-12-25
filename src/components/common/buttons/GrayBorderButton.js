@@ -3,8 +3,9 @@ import { Button } from "./Button";
 import styled from "styled-components";
 
 const StyledButton = styled(Button)`
-  background-color: var(--slate-dark-6);
-  border-color: var(--slate-dark-8);
+  background-color: #232528;
+  border-color: #232528;
+border-radius: 50px;
   color: white;
 `;
 

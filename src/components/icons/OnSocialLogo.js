@@ -2,9 +2,9 @@ import React from "react";
 
 export function OnSocialLogo() {
   return (
-   <svg
-      width="26"
-      height="26
+<svg
+      width="40"
+      height="40
   "
       viewBox="425 105 155 300"
       fill="none"

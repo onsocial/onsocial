@@ -2,16 +2,13 @@ import React, { useCallback } from "react";
 import styled from "styled-components";
 import { Close } from "../../icons/Close";
 import { Home } from "../../icons/Home";
-import { Book } from "../../icons/Book";
-import { Code } from "../../icons/Code";
-import { LogOut } from "../../icons/LogOut";
-import { Fork } from "../../icons/Fork";
 import { UserCircle } from "../../icons/UserCircle";
+import { LogOut } from "../../icons/LogOut";
+import { Withdraw } from "../../icons/Withdraw";
 import { Widget, useNear } from "near-social-vm";
 import { NavigationButton } from "../NavigationButton";
 import { SignInButton } from "../SignInButton";
 import { Link } from "react-router-dom";
-import { Withdraw } from "../../icons/Withdraw";
 
 const StyledMenu = styled.div`
   position: fixed;
@@ -40,7 +37,7 @@ const StyledMenu = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 0px;
     overflow-x: auto;
 
     .nav-sign-in-btn {
@@ -63,7 +60,7 @@ const StyledMenu = styled.div`
     .profile-name {
       color: #232528;
       font-weight: var(--font-weight-bold);
-      margin-top: 10px;
+      margin-top: 5px;
     }
 
     .profile-username {
@@ -74,6 +71,22 @@ const StyledMenu = styled.div`
     .profile-username {
       text-overflow: ellipsis;
       overflow: hidden;
+    }
+
+    .profile-section {
+      margin-bottom: 0px;
+      padding: 25px;
+    }
+
+    /* Hairline with padding inside */
+    .hairline-wrapper {
+      padding-left: 25px; /* Apply padding to the left */
+      padding-right: 25px; /* Apply padding to the right */
+    }
+
+    .hairline {
+      height: 1px;
+      background-color: #eee;
     }
   }
 
@@ -87,7 +100,8 @@ const StyledMenu = styled.div`
       align-items: center;
       color: #232528;
       font-weight: var(--font-weight-bold);
-border-radius: 0;
+      border-radius: 0;
+      padding: 25px;
 
       svg {
         margin-right: 12px;
@@ -96,7 +110,7 @@ border-radius: 0;
       &.active,
       &:hover,
       &:focus {
-        background-color: #D7D7DE;
+        background-color: #d7d7de;
         text-decoration: none;
         transition: background-color 0.3s ease, color 0.3s ease;
         svg {
@@ -109,7 +123,7 @@ border-radius: 0;
   }
 
   .top-links {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
   .bottom-links {
@@ -117,7 +131,9 @@ border-radius: 0;
 
     a,
     button {
-      padding: 14px 0;
+      padding: 14px 10px 14px 25px; /* Apply 25px padding to the left */
+      transition: background-color 0.3s ease, padding 0.3s ease;
+      border-radius: 0px;
     }
   }
 
@@ -164,34 +180,40 @@ export function Menu(props) {
   return (
     <StyledMenu className={props.showMenu ? "show" : ""}>
       <div className="left-side">
-        {props.signedIn ? (
-          <Link
-            to={`/${props.widgets.profilePage}?accountId=${props.signedAccountId}`}
-            className="profile-link"
-          >
-            <Widget
-              src={props.widgets.profileImage}
-              props={{
-                accountId: props.signedAccountId,
-                className: "d-inline-block",
-                style: { width: "56px", height: "56px" },
+        <div className="profile-section">
+          {props.signedIn ? (
+            <Link
+              to={`/${props.widgets.profilePage}?accountId=${props.signedAccountId}`}
+              className="profile-link"
+            >
+              <Widget
+                src={props.widgets.profileImage}
+                props={{
+                  accountId: props.signedAccountId,
+                  className: "d-inline-block",
+                  style: { width: "56px", height: "56px" },
+                }}
+              />
+              {props.widgets.profileName && (
+                <div className="profile-name">
+                  <Widget src={props.widgets.profileName} />
+                </div>
+              )}
+              <div className="profile-username">{props.signedAccountId}</div>
+            </Link>
+          ) : (
+            <SignInButton
+              onSignIn={() => {
+                props.onCloseMenu();
+                props.requestSignIn();
               }}
             />
-            {props.widgets.profileName && (
-              <div className="profile-name">
-                <Widget src={props.widgets.profileName} />
-              </div>
-            )}
-            <div className="profile-username">{props.signedAccountId}</div>
-          </Link>
-        ) : (
-          <SignInButton
-            onSignIn={() => {
-              props.onCloseMenu();
-              props.requestSignIn();
-            }}
-          />
-        )}
+          )}
+        </div>
+        {/* Hairline with padding inside */}
+        <div className="hairline-wrapper">
+          <div className="hairline" />
+        </div>
         <ul className="top-links">
           <li>
             <NavigationButton route="/">
@@ -208,10 +230,8 @@ export function Menu(props) {
               Profile
             </NavigationButton>
           </li>
-          
         </ul>
         <ul className="bottom-links">
-         
           {props.signedIn && (
             <>
               <li>

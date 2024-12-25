@@ -3,9 +3,9 @@ import { Button } from "./Button";
 import styled from "styled-components";
 
 const StyledButton = styled(Button)`
-  background-color: var(--blue-light-9);
-  border-color: var(--blue-light-9);
-  color: white;
+  background-color: #D7D7DE;
+  border-color: #D7D7DE;
+  color: #232528;
 `;
 
 export function BlueButton(props) {

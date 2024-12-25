@@ -6,10 +6,10 @@ const StyledNavigationButton = styled.div`
   a {
     color: #232528;
     font-size: 16px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 50px;
     font-weight: var(--font-weight-bold);
-    height: 40px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;

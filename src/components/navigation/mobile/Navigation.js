@@ -14,7 +14,7 @@ const StyledNavigation = styled.div`
   right: 0;
   width: 100%;
   z-index: 1000;
-  padding: 6px 24px;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
