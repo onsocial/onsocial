@@ -87,6 +87,7 @@ const StyledMenu = styled.div`
     .hairline {
       height: 1px;
       background-color: #eee;
+margin-bottom: 20px;
     }
   }
 
@@ -123,7 +124,7 @@ const StyledMenu = styled.div`
   }
 
   .top-links {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   .bottom-links {
@@ -229,16 +230,25 @@ export function Menu(props) {
               <UserCircle />
               Profile
             </NavigationButton>
+
           </li>
+
         </ul>
+
         <ul className="bottom-links">
           {props.signedIn && (
             <>
+{/* Hairline with padding inside */}
+        <div className="hairline-wrapper">
+          <div className="hairline" />
+        </div>
+
               <li>
                 <button
                   className="log-out-button"
                   onClick={() => withdrawStorage()}
                 >
+
                   <Withdraw />
                   Withdraw {props.availableStorage.div(1000).toFixed(2)}kb
                 </button>
