@@ -4,10 +4,12 @@ import { Widget } from "near-social-vm";
 
 const StyledNotificationWidget = styled.div`
   margin: 0 15px;
-  background-color: var(--slate-dark-5);
+  background-color: #D7D7DE;
   height: 40px;
   width: 40px;
   border-radius: 50%;
+transition: background-color 0.3s, color 0.3s;
+
 
   > div,
   a {
@@ -16,7 +18,7 @@ const StyledNotificationWidget = styled.div`
   }
 
   a {
-    color: var(--slate-dark-11) !important;
+    color: #232528 !important;
     display: flex;
     align-items: center;
     justify-content: center;

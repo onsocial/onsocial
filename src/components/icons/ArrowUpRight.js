@@ -12,14 +12,14 @@ export function ArrowUpRight() {
     >
       <path
         d="M17.25 15.25V6.75H8.75"
-        stroke="#9BA1A6"
+        stroke="#232528"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M17 7L6.75 17.25"
-        stroke="#9BA1A6"
+        stroke="#232528"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

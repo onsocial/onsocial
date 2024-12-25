@@ -36,7 +36,7 @@ const StyledMenu = styled.div`
 
   .left-side {
     flex: 80;
-    background-color: var(--slate-dark-1);
+    background-color: white;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -61,13 +61,13 @@ const StyledMenu = styled.div`
     }
 
     .profile-name {
-      color: var(--slate-dark-12);
+      color: #232528;
       font-weight: var(--font-weight-bold);
       margin-top: 10px;
     }
 
     .profile-username {
-      color: var(--slate-dark-11);
+      color: #687076;
     }
 
     .profile-name,
@@ -85,8 +85,9 @@ const StyledMenu = styled.div`
       padding: 28px 0;
       display: flex;
       align-items: center;
-      color: var(--slate-dark-11);
+      color: #232528;
       font-weight: var(--font-weight-bold);
+border-radius: 0;
 
       svg {
         margin-right: 12px;
@@ -95,12 +96,12 @@ const StyledMenu = styled.div`
       &.active,
       &:hover,
       &:focus {
-        background-color: transparent;
-        color: white;
+        background-color: #D7D7DE;
         text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
         svg {
           path {
-            stroke: white;
+            stroke: #232528;
           }
         }
       }
@@ -123,13 +124,13 @@ const StyledMenu = styled.div`
   .log-out-button {
     background: none;
     border: none;
-    color: var(--slate-dark-11);
+    color: #232528;
     font-weight: var(--font-weight-bold);
     padding: 28px 0;
 
     svg {
       path {
-        stroke: #9ba1a6;
+        stroke: #232528;
       }
     }
   }
@@ -150,7 +151,7 @@ const StyledMenu = styled.div`
   .right-side {
     flex: 20;
     opacity: 0.8;
-    background-color: var(--slate-dark-1);
+    background-color: #232528;
   }
 `;
 
@@ -207,42 +208,10 @@ export function Menu(props) {
               Profile
             </NavigationButton>
           </li>
-          <li>
-            <NavigationButton route="/edit">
-              <Code />
-              Editor
-            </NavigationButton>
-          </li>
-          <li>
-            <NavigationButton href={props.documentationHref}>
-              <Book />
-              Documentation
-            </NavigationButton>
-          </li>
+          
         </ul>
         <ul className="bottom-links">
-          {props.widgetSrc?.edit && (
-            <li>
-              <Link to={`/edit/${props.widgetSrc?.edit}`}>
-                <Fork />
-                {props.widgetSrc.edit.startsWith(
-                  `${props.signedAccountId}/widget/`
-                )
-                  ? "Edit widget"
-                  : "Fork widget"}
-              </Link>
-            </li>
-          )}
-          {props.widgetSrc?.view && (
-            <li>
-              <Link
-                to={`/${props.widgets.viewSource}?src=${props.widgetSrc?.view}`}
-              >
-                <Code />
-                View source
-              </Link>
-            </li>
-          )}
+         
           {props.signedIn && (
             <>
               <li>

@@ -6,7 +6,7 @@ const StyledMobileMenuButton = styled.button`
   border: none;
   display: flex;
   align-items: center;
-  color: white;
+  color: #232528;
   font-weight: var(--font-weight-bold);
   padding: 0;
 
@@ -19,7 +19,7 @@ const StyledMobileMenuButton = styled.button`
     margin-right: 10px;
 
     div {
-      background-color: white;
+      background-color: #232528;
       height: 2px;
       width: 100%;
       border-radius: 30px;

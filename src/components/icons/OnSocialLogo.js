@@ -1,10 +1,10 @@
 import React from "react";
 
-export function Logotype({ color = "white" }) {
+export function OnSocialLogo() {
   return (
-<svg
-      width="35"
-      height="35
+   <svg
+      width="26"
+      height="26
   "
       viewBox="425 105 155 300"
       fill="none"
@@ -17,5 +17,6 @@ export function Logotype({ color = "white" }) {
   <path stroke="#232528" stroke-width="20" id="svg_4" d="m503.10002,330.5c-41.43647,0 -75,-33.56354 -75,-75c0,-41.43647 33.56354,-75 75,-75c41.43647,0 75,33.56354 75,75c0,41.43647 -33.56354,75 -75,75z" opacity="undefined" fill="none"/>
  </g>
     </svg>
+
   );
 }

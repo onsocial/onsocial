@@ -4,21 +4,22 @@ import { NavLink } from "react-router-dom";
 
 const StyledNavigationButton = styled.div`
   a {
-    color: var(--slate-dark-11);
+    color: #232528;
     font-size: 16px;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 50px;
     font-weight: var(--font-weight-bold);
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+ transition: background-color 0.3s, color 0.3s;
 
     &:hover,
     &.active {
-      color: white;
+      color: #232528;
       text-decoration: none;
-      background-color: var(--slate-dark-6);
+      background-color: #D7D7DE;
     }
   }
   &.disabled {
