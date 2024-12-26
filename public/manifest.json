@@ -1,6 +1,6 @@
 {
-  "short_name": "Near Social",
-  "name": "Near Social",
+  "short_name": "OnSocial",
+  "name": "OnSocial",
   "icons": [
     {
       "src": "app.png",
@@ -9,6 +9,6 @@
     }
   ],
   "display": "standalone",
-  "theme_color": "#151718",
+  "theme_color": "#232528",
   "background_color": "#ffffff"
 }
