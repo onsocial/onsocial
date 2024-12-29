@@ -14,14 +14,14 @@ const StyledNavigation = styled.div`
   right: 0;
   width: 100%;
   z-index: 1000;
-  padding: 10px 24px;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   background-color: ${({ scrolled }) => (scrolled ? 'white' : 'white')};
   transform: ${({ hide }) => (hide ? 'translateY(-100%)' : 'translateY(0)')};
-  max-height: 50px;  // Limit the height of the navbar
+  height: 50px;  // Limit the height of the navbar
 
 
   .logo-link {
