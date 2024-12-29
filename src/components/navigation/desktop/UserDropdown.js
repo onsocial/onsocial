@@ -76,7 +76,7 @@ const StyledDropdown = styled.div`
       :hover,
       :focus {
         text-decoration: none;
-        background-color: #D7D7DE;
+        background-color: #59e692;
         color: #232528;
 
         svg {

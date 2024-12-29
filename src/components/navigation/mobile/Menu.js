@@ -111,7 +111,7 @@ margin-bottom: 20px;
       &.active,
       &:hover,
       &:focus {
-        background-color: #01ec96;
+        background-color: #59e692;
         text-decoration: none;
         transition: background-color 0.3s ease, color 0.3s ease;
         svg {

@@ -19,7 +19,7 @@ const StyledNavigationButton = styled.div`
     &.active {
       color: #232528;
       text-decoration: none;
-      background-color: #D7D7DE;
+      background-color: #59e692;
     }
   }
   &.disabled {

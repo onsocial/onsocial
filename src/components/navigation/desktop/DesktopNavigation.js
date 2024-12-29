@@ -19,7 +19,7 @@ const StyledNavigation = styled.div`
   padding: 4px 0;
   border-bottom: 1px solid white;
   transition: transform 0.3s ease;
-  height: 60px;  // Set the height of the navbar
+  height: 55px;  // Set the height of the navbar
 
   &.hidden {
     transform: translateY(-100%);
