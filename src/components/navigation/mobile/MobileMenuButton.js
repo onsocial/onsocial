@@ -12,7 +12,7 @@ const StyledMobileMenuButton = styled.button`
 
   .menu {
     width: 18px;
-    height: 20px;
+    height: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
