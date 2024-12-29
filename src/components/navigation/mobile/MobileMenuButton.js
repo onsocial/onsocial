@@ -20,7 +20,7 @@ const StyledMobileMenuButton = styled.button`
 
     div {
       background-color: #232528;
-      height: 2.2px;
+      height: 2px;
       width: 100%;
       border-radius: 30px;
     }
