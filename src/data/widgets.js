@@ -28,6 +28,7 @@ const MainnetWidgets = {
   widgetMetadata: "mob.near/widget/WidgetMetadata",
   profileImage: "mob.near/widget/ProfileImage",
   notificationButton: "onsocial.near/widget/NotificationButton",
+  searchButton: "onsocial.near/widget/SearchButton",
   profilePage: "onsocial.near/widget/ProfilePage",
   profileName: "patrick.near/widget/ProfileName",
   editorComponentSearch: "mob.near/widget/Editor.ComponentSearch",

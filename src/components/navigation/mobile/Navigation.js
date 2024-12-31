@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { MobileMenuButton } from "./MobileMenuButton";
 import { OnSocialLogo } from "../../icons/OnSocialLogo";
 import { NotificationWidget } from "../NotificationWidget";
+import { SearchWidget } from "../SearchWidget";
 import { SignInButton } from "../SignInButton";
-import { StarButton } from "../StarButton";
 
 const StyledNavigation = styled.div`
   position: sticky;
@@ -23,7 +23,6 @@ const StyledNavigation = styled.div`
   transform: ${({ hide }) => (hide ? 'translateY(-100%)' : 'translateY(0)')};
   height: 48px;  // Limit the height of the navbar
 
-
   .logo-link {
     position: absolute;
     left: 0;
@@ -37,6 +36,11 @@ const StyledNavigation = styled.div`
 
   .nav-notification-widget {
     margin: 0;
+  }
+
+  .nav-search-widget {
+    margin: 0;
+    margin-right: 20px; /* Add margin to position it 20px to the left of notification icon */
   }
 
   .nav-sign-in-btn {
@@ -97,15 +101,21 @@ export function Navigation(props) {
       >
         <OnSocialLogo />
       </Link>
-      {props.signedIn ? (
-        <div className="d-flex">
+
+      <div className="d-flex">
+        <SearchWidget
+          className="nav-search-widget"
+          searchButtonSrc={props.widgets.searchButton}
+        />
+        {props.signedIn ? (
           <NotificationWidget
+            className="nav-notification-widget"
             notificationButtonSrc={props.widgets.notificationButton}
           />
-        </div>
-      ) : (
-        <SignInButton onSignIn={() => props.requestSignIn()} />
-      )}
+        ) : (
+          <SignInButton className="nav-sign-in-btn" onSignIn={() => props.requestSignIn()} />
+        )}
+      </div>
     </StyledNavigation>
   );
 }
