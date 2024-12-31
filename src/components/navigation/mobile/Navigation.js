@@ -39,7 +39,7 @@ const StyledNavigation = styled.div`
   }
 
   .nav-search-widget {
-    margin: 0;
+    margin-top: 1px;
     margin-right: 20px; /* Add margin to position it 20px to the left of notification icon */
   }
 
@@ -103,10 +103,14 @@ export function Navigation(props) {
       </Link>
 
       <div className="d-flex">
-        <SearchWidget
-          className="nav-search-widget"
-          searchButtonSrc={props.widgets.searchButton}
-        />
+        {/* Conditionally render the SearchWidget only if the user is signed in */}
+        {props.signedIn && (
+          <SearchWidget
+            className="nav-search-widget"
+            searchButtonSrc={props.widgets.searchButton}
+          />
+        )}
+
         {props.signedIn ? (
           <NotificationWidget
             className="nav-notification-widget"
