@@ -7,6 +7,7 @@ import { ArrowUpRight } from "../../icons/ArrowUpRight";
 import { SignInButton } from "../SignInButton";
 import { UserDropdown } from "./UserDropdown";
 import { NotificationWidget } from "../NotificationWidget";
+import { SearchWidget } from "../SearchWidget"; // Import the SearchWidget
 
 const StyledNavigation = styled.div`
   position: sticky;
@@ -19,7 +20,7 @@ const StyledNavigation = styled.div`
   padding: 4px 0;
   border-bottom: 1px solid white;
   transition: transform 0.3s ease;
-  height: 55px;  // Set the height of the navbar
+  height: 55px;
 
   &.hidden {
     transform: translateY(-100%);
@@ -28,7 +29,7 @@ const StyledNavigation = styled.div`
   .container {
     display: flex;
     align-items: center;
-    height: 100%; // Ensure the content inside the navbar respects the height
+    height: 100%;
 
     .navigation-section {
       margin-left: 50px;
@@ -58,6 +59,15 @@ const StyledNavigation = styled.div`
     .arrow-up-right {
       margin-left: 4px;
     }
+
+.nav-notification-widget {
+      margin-right: 20px; /* Position it nicely between other elements */
+    }
+
+    .nav-search-widget {
+      margin-right: 20px; /* Position it nicely between other elements */
+margin-bottom: 1px;
+    }
   }
 `;
 
@@ -70,10 +80,8 @@ export function DesktopNavigation(props) {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Hide the navbar when scrolling down and scrolled past 100px
         setIsHidden(true);
       } else {
-        // Show the navbar when scrolling up
         setIsHidden(false);
       }
 
@@ -108,16 +116,21 @@ export function DesktopNavigation(props) {
           </NavigationButton>
         </div>
         <div className="user-section">
-          {!props.signedIn && (
-            <SignInButton onSignIn={() => props.requestSignIn()} />
-          )}
           {props.signedIn && (
             <>
+              {/* Render SearchWidget if signed in */}
+              <SearchWidget
+                className="nav-search-widget"
+                searchButtonSrc={props.widgets.searchButton}
+              />
               <NotificationWidget
                 notificationButtonSrc={props.widgets.notificationButton}
               />
               <UserDropdown {...props} />
             </>
+          )}
+          {!props.signedIn && (
+            <SignInButton onSignIn={() => props.requestSignIn()} />
           )}
         </div>
       </div>
