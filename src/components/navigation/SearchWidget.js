@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { Widget } from "near-social-vm";
 
 const StyledSearchWidget = styled.div`
- margin: 0 20px;
-
+  margin-top: 3px;
 `;
 
 export function SearchWidget({ searchButtonSrc }) {
