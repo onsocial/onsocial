@@ -104,9 +104,9 @@ function App(props) {
           setupHereWallet(),
           setupNearMobileWallet({
             dAppMetadata: {
-              name: "Near Social",
-              logoUrl: "https://near.social/app.png",
-              url: "https://near.social",
+              name: "OnSocial",
+              logoUrl: "https://onsocial.id/app.png",
+              url: "https://onsocial.id",
             },
           }),
           setupSender(),
