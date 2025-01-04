@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef} from "react";
 import "error-polyfill";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@near-wallet-selector/modal-ui/styles.css";
