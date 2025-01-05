@@ -76,8 +76,8 @@ class NoscriptDescriptionInjector {
 }
 
 function defaultData() {
-  const image = "https://near.social/assets/logo.png";
-  const title = "Near Social";
+  const image = "https://onsocial.id/assets/logo.png";
+  const title = "OnSocial";
   const description =
     "Decentralized Customizable Social Network on NEAR Protocol";
   return {
@@ -120,12 +120,12 @@ async function profileData(env, url, data) {
   const name = profile?.name;
   data.raw = profile;
   data.description =
-    profile?.description || `Profile of ${accountId} on Near Social`;
+    profile?.description || `Profile of ${accountId} on OnSocial`;
   data.image = await imageToUrl(env, profile?.image);
   data.authorImage = data.image || wrapImage(DefaultProfileImage);
   data.title = name
-    ? `${name} (${accountId}) | Near Social`
-    : `${accountId} | Near Social`;
+    ? `${name} (${accountId}) | OnSocial`
+    : `${accountId} | OnSocial`;
   data.accountName = name;
   data.accountId = accountId;
 }
@@ -170,17 +170,17 @@ async function generateData(env, url) {
   const data = defaultData();
   try {
     if (
-      url.pathname === "/mob.near/widget/MainPage.Post.Page" ||
-      url.pathname === "/mob.near/widget/MainPage.N.Post.Page" ||
+      url.pathname === "/onsocial.near/widget/MainPage.Post.Page" ||
+      url.pathname === "/onsocial.near/widget/MainPage.N.Post.Page" ||
       url.pathname === "/near/widget/PostPage"
     ) {
       await postData(env, url, data, true);
     } else if (
-      url.pathname === "/mob.near/widget/MainPage.Comment.Page" ||
-      url.pathname === "/mob.near/widget/MainPage.N.Comment.Page"
+      url.pathname === "/onsocial.near/widget/MainPage.Comment.Page" ||
+      url.pathname === "/onsocial.near/widget/MainPage.N.Comment.Page"
     ) {
       await postData(env, url, data, false);
-    } else if (url.pathname === "/mob.near/widget/ProfilePage") {
+    } else if (url.pathname === "/onsocial.near/widget/ProfilePage") {
       await profileData(env, url, data);
     } else if (url.pathname === "/mob.near/widget/WidgetSource") {
       await sourceData(env, url, data);
