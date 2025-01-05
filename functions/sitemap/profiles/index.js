@@ -7,7 +7,7 @@ export const generateSitemapProfiles = async (env) => {
     .map(
       (accountId) =>
         `  <url>
-    <loc>https://near.social/mob.near/widget/ProfilePage?accountId=${accountId}</loc>
+    <loc>https://onsocial.id/onsocial.near/widget/ProfilePage?accountId=${accountId}</loc>
     <changefreq>monthly</changefreq>
   </url>`
     )
