@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useState, useRef} from "react";
 import "error-polyfill";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@near-wallet-selector/modal-ui/styles.css";
@@ -33,18 +33,6 @@ import { ContractId, NetworkId, Widgets } from "./data/widgets";
 import { useEthersProviderContext } from "./data/web3";
 import SignInPage from "./pages/SignInPage";
 import { isValidAttribute } from "dompurify";
-
-// Importing NEAR API script dynamically
-useEffect(() => {
-  const script = document.createElement('script');
-  script.src = "https://cdn.jsdelivr.net/npm/near-api-js@2.0.0/dist/near-api-js.min.js";
-  script.async = true;
-  document.body.appendChild(script);
-
-  return () => {
-    document.body.removeChild(script);
-  };
-}, []);
 
 export const refreshAllowanceObj = {};
 const documentationHref = "https://social.near-docs.io/";
@@ -89,7 +77,6 @@ function App(props) {
   const accountId = account.accountId;
   const injectedConfig = window?.InjectedConfig;
 
-  // Initialize the NEAR wallet connection
   useEffect(() => {
     const features = {};
     if (injectedConfig?.skipConfirmations) {
