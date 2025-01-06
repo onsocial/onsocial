@@ -113,11 +113,12 @@ margin-bottom: 20px;
       &:hover,
       &:focus {
         background-color: #59e692;
+color: white;
         text-decoration: none;
         transition: background-color 0.3s ease, color 0.3s ease;
         svg {
           path {
-            stroke: #232528;
+            stroke: white;
           }
         }
       }
