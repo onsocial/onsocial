@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Close } from "../../icons/Close";
 import { Home } from "../../icons/Home";
 import { UserCircle } from "../../icons/UserCircle";
-import { VFLabs } from "../../icons/Communities";
+import { Communities } from "../../icons/Communities";
 import { LogOut } from "../../icons/LogOut";
 import { Withdraw } from "../../icons/Withdraw";
 import { Widget, useNear } from "near-social-vm";
@@ -236,7 +236,7 @@ export function Menu(props) {
 
           <li>
 <NavigationButton route="/vfdao.near/widget/App.Index?page=contract&accountId=vflabs.mintbase1.near">
-              <Communities/>
+              <Communities />
               DAO Communities
             </NavigationButton>
           </li>
