@@ -236,7 +236,7 @@ export function Menu(props) {
           </li>
 
           <li>
-<NavigationButton route="/vfdao.near/widget/App.Index?page=contract&accountId=vflabs.mintbase1.near">
+<NavigationButton route="/onsocial.near/widget/Test2">
               <Communities />
               DAO Communities
             </NavigationButton>
