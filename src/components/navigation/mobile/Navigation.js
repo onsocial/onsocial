@@ -7,6 +7,7 @@ import { NotificationWidget } from "../NotificationWidget";
 import { SearchWidget } from "../SearchWidget";
 import { SignInButton } from "../SignInButton";
 
+// Styling for the top navigation (unchanged)
 const StyledNavigation = styled.div`
   position: sticky;
   top: 0;
@@ -21,7 +22,7 @@ const StyledNavigation = styled.div`
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   background-color: ${({ scrolled }) => (scrolled ? 'white' : 'white')};
   transform: ${({ hide }) => (hide ? 'translateY(-100%)' : 'translateY(0)')};
-  height: 48px;  // Limit the height of the navbar
+  height: 48px;
 
   .logo-link {
     position: absolute;
@@ -40,39 +41,69 @@ const StyledNavigation = styled.div`
 
   .nav-search-widget {
     margin-top: 1px;
-    margin-right: 20px; /* Add margin to position it 20px to the left of notification icon */
-  }
-
-  .nav-sign-in-btn {
-    // Styling for the sign-in button
+    margin-right: 20px;
   }
 
   .nav-sign-in-btn:hover {
-    background: black; /* Change to black on hover */
+    background: black;
   }
+`;
+
+// Styling for the bottom navigation with padding from left and right edges and spacing between icons
+const StyledBottomNavigation = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 20px;  // 20px padding from left and right
+  display: flex;
+  justify-content: space-between;  // Evenly distribute icons
+  align-items: center;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  height: 48px;
+  transform: ${({ hide }) => (hide ? 'translateY(100%)' : 'translateY(0)')};
+  transition: transform 0.3s ease;
+`;
+
+const IconWrapper = styled.div`
+  margin: 0 10px;  // Add margin between icons
+`;
+
+const IconContainer = styled.div`
+  width: 100%;  // Take up the entire width of the bottom navigation
+  display: flex;
+  justify-content: space-between;  // Space out the icons evenly
+  padding: 0 20px;  // Padding to ensure 20px from the left and right edges
 `;
 
 export function Navigation(props) {
   const [scrolled, setScrolled] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);  // To track the last scroll position
-  const [hide, setHide] = useState(false); // To control visibility of the navbar
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hide, setHide] = useState(false); // For top bar visibility
+  const [bottomHide, setBottomHide] = useState(false); // For bottom bar visibility
 
-  // Scroll event handler to track scrolling direction and position
   useEffect(() => {
     const handleScroll = () => {
-      // If user scrolls down, hide the navbar, if scrolling up, show the navbar
+      // Handle top navigation bar visibility
       if (window.scrollY > lastScrollY) {
-        // Scrolling down
-        setHide(true);
+        setHide(true); // Scrolling down
       } else {
-        // Scrolling up
-        setHide(false);
+        setHide(false); // Scrolling up
       }
 
-      // Update last scroll position
+      // Handle bottom navigation bar visibility
+      if (window.scrollY > lastScrollY) {
+        setBottomHide(true); // Scrolling down
+      } else {
+        setBottomHide(false); // Scrolling up
+      }
+
       setLastScrollY(window.scrollY);
 
-      // Change background when scrolling down past 50px
+      // Change background for top navigation when scrolling past 50px
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
@@ -84,42 +115,62 @@ export function Navigation(props) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]); // Dependency on last scroll position to track direction
+  }, [lastScrollY]);
 
   return (
-    <StyledNavigation scrolled={scrolled} hide={hide}>
-      <MobileMenuButton
-        onClick={props.onClickShowMenu}
-        currentPage={props.currentPage}
-      />
-      <Link
-        to="/"
-        className="logo-link"
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-      >
-        <OnSocialLogo />
-      </Link>
+    <>
+      <StyledNavigation scrolled={scrolled} hide={hide}>
+        <MobileMenuButton
+          onClick={props.onClickShowMenu}
+          currentPage={props.currentPage}
+        />
+        <Link
+          to="/"
+          className="logo-link"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          <OnSocialLogo />
+        </Link>
+        <div className="d-flex">
+          {props.signedIn && (
+            <SearchWidget
+              className="nav-search-widget"
+              searchButtonSrc={props.widgets.searchButton}
+            />
+          )}
+          {props.signedIn ? (
+            <NotificationWidget
+              className="nav-notification-widget"
+              notificationButtonSrc={props.widgets.notificationButton}
+            />
+          ) : (
+            <SignInButton
+              className="nav-sign-in-btn"
+              onSignIn={() => props.requestSignIn()}
+            />
+          )}
+        </div>
+      </StyledNavigation>
 
-      <div className="d-flex">
-        {/* Conditionally render the SearchWidget only if the user is signed in */}
-        {props.signedIn && (
-          <SearchWidget
-            className="nav-search-widget"
-            searchButtonSrc={props.widgets.searchButton}
-          />
-        )}
-
-        {props.signedIn ? (
-          <NotificationWidget
-            className="nav-notification-widget"
-            notificationButtonSrc={props.widgets.notificationButton}
-          />
-        ) : (
-          <SignInButton className="nav-sign-in-btn" onSignIn={() => props.requestSignIn()} />
-        )}
-      </div>
-    </StyledNavigation>
+      <StyledBottomNavigation hide={bottomHide}>
+        <IconContainer>
+          {/* Each IconWrapper is a container for each icon */}
+          <IconWrapper>
+            <SearchWidget className="nav-search-widget" searchButtonSrc={props.widgets.searchButton} />
+          </IconWrapper>
+          <IconWrapper>
+            <NotificationWidget className="nav-notification-widget" notificationButtonSrc={props.widgets.notificationButton} />
+          </IconWrapper>
+          
+          {/* Additional icons can go here */}
+          <IconWrapper>Icon 3</IconWrapper>
+          <IconWrapper>Icon 4</IconWrapper>
+          <IconWrapper>Icon 5</IconWrapper>
+          <IconWrapper>Icon 6</IconWrapper>
+        </IconContainer>
+      </StyledBottomNavigation>
+    </>
   );
 }
