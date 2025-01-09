@@ -10,6 +10,7 @@ import { Message } from "../../icons/Message";
 import { Search } from "../../icons/Search";
 import { Home2 } from "../../icons/Home2";
 import { Ai } from "../../icons/Ai";
+import { Dots } from "../../icons/Dots";
 
 // Styling for the top navigation (unchanged)
 const StyledNavigation = styled.div`
@@ -47,6 +48,8 @@ const StyledNavigation = styled.div`
     background: black;
   }
 `;
+
+
 
 // Styling for the bottom navigation with padding from left and right edges and spacing between icons
 const StyledBottomNavigation = styled.div`
@@ -119,10 +122,18 @@ export function Navigation(props) {
   return (
     <>
       <StyledNavigation scrolled={scrolled} hide={hide}>
-        <MobileMenuButton
-          onClick={props.onClickShowMenu}
-          currentPage={props.currentPage}
-        />
+        {props.signedIn ? (
+          <MobileMenuButton
+            onClick={props.onClickShowMenu}
+            currentPage={props.currentPage}
+          />
+        ) : (
+          <SignInButton
+            className="nav-sign-in-btn"
+            onSignIn={() => props.requestSignIn()}
+          />
+        )}
+
         <Link
           to="/"
           className="logo-link"
@@ -133,17 +144,12 @@ export function Navigation(props) {
           <OnSocialLogo />
         </Link>
         <div className="d-flex">
-          {props.signedIn ? (
-            <NotificationWidget
-              className="nav-notification-widget"
-              notificationButtonSrc={props.widgets.notificationButton}
-            />
-          ) : (
-            <SignInButton
-              className="nav-sign-in-btn"
-              onSignIn={() => props.requestSignIn()}
-            />
-          )}
+          
+                        <IconWrapper>
+              <Dots />
+
+            </IconWrapper>
+                    
         </div>
       </StyledNavigation>
 

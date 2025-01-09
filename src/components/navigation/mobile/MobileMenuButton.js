@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Widget } from "near-social-vm"; // Import Widget
 
 const StyledMobileMenuButton = styled.button`
   background-color: transparent;
@@ -11,19 +12,9 @@ const StyledMobileMenuButton = styled.button`
   padding: 0;
 
   .menu {
-    width: 18px;
-    height: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+ 
+  
     margin-right: 10px;
-
-    div {
-      background-color: #232528;
-      height: 2px;
-      width: 100%;
-      border-radius: 30px;
-    }
   }
 `;
 
@@ -31,9 +22,14 @@ export function MobileMenuButton(props) {
   return (
     <StyledMobileMenuButton onClick={props.onClick}>
       <div className="menu">
-        <div />
-        <div />
-        <div />
+        {/* Use the correct widget source for the profile image */}
+        <Widget src="mob.near/widget/ProfileImage" 
+	props={{
+                  accountId: props.signedAccountId,
+                  className: "d-inline-block",
+                  style: { width: "32px", height: "32px" },
+                }}
+/>
       </div>
       {props.currentPage}
     </StyledMobileMenuButton>
