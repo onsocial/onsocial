@@ -27,7 +27,7 @@ export function MobileMenuButton(props) {
 	props={{
                   accountId: props.signedAccountId,
                   className: "d-inline-block",
-                  style: { width: "32px", height: "32px" },
+                  style: { width: "28px", height: "28px" },
                 }}
 />
       </div>
