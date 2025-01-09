@@ -56,7 +56,7 @@ const StyledBottomNavigation = styled.div`
   right: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px 10px;  // 20px padding from left and right
+  padding: 10px 10px;  // 20px padding from left and right
   display: flex;
   justify-content: space-between;  // Evenly distribute icons
   align-items: center;
