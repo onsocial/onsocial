@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import { MobileMenuButton } from "./MobileMenuButton";
 import { OnSocialLogo } from "../../icons/OnSocialLogo";
 import { NotificationWidget } from "../NotificationWidget";
-import { SearchWidget } from "../SearchWidget";
 import { SignInButton } from "../SignInButton";
+import { Communities } from "../../icons/Communities";
+import { Message } from "../../icons/Message";
+import { Search } from "../../icons/Search";
+import { Home2 } from "../../icons/Home2";
+import { Ai } from "../../icons/Ai";
 
 // Styling for the top navigation (unchanged)
 const StyledNavigation = styled.div`
@@ -39,11 +43,6 @@ const StyledNavigation = styled.div`
     margin: 0;
   }
 
-  .nav-search-widget {
-    margin-top: 1px;
-    margin-right: 20px;
-  }
-
   .nav-sign-in-btn:hover {
     background: black;
   }
@@ -57,12 +56,12 @@ const StyledBottomNavigation = styled.div`
   right: 0;
   width: 100%;
   z-index: 1000;
-  padding: 10px 20px;  // 20px padding from left and right
+  padding: 20px 10px;  // 20px padding from left and right
   display: flex;
   justify-content: space-between;  // Evenly distribute icons
   align-items: center;
   background-color: white;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #eee;
   height: 48px;
   transform: ${({ hide }) => (hide ? 'translateY(100%)' : 'translateY(0)')};
   transition: transform 0.3s ease;
@@ -134,12 +133,6 @@ export function Navigation(props) {
           <OnSocialLogo />
         </Link>
         <div className="d-flex">
-          {props.signedIn && (
-            <SearchWidget
-              className="nav-search-widget"
-              searchButtonSrc={props.widgets.searchButton}
-            />
-          )}
           {props.signedIn ? (
             <NotificationWidget
               className="nav-notification-widget"
@@ -156,19 +149,40 @@ export function Navigation(props) {
 
       <StyledBottomNavigation hide={bottomHide}>
         <IconContainer>
-          {/* Each IconWrapper is a container for each icon */}
           <IconWrapper>
-            <SearchWidget className="nav-search-widget" searchButtonSrc={props.widgets.searchButton} />
+            <Link to="/">
+              <Home2 />
+            </Link>
           </IconWrapper>
+
           <IconWrapper>
-            <NotificationWidget className="nav-notification-widget" notificationButtonSrc={props.widgets.notificationButton} />
+            <Link to="/onsocial.near/widget/Search.Tabs">
+              <Search />
+            </Link>
           </IconWrapper>
-          
-          {/* Additional icons can go here */}
-          <IconWrapper>Icon 3</IconWrapper>
-          <IconWrapper>Icon 4</IconWrapper>
-          <IconWrapper>Icon 5</IconWrapper>
-          <IconWrapper>Icon 6</IconWrapper>
+
+          <IconWrapper>
+            <Link to="/onsocial.near/widget/Test2">
+              <Communities />
+            </Link>
+          </IconWrapper>
+
+          <IconWrapper>
+            <Ai />
+          </IconWrapper>
+
+          <IconWrapper>
+            <NotificationWidget
+              className="nav-notification-widget"
+              notificationButtonSrc={props.widgets.notificationButton}
+            />
+          </IconWrapper>
+
+          <IconWrapper>
+            <Link to="/onsocial.near/widget/Test2">
+              <Message />
+            </Link>
+          </IconWrapper>
         </IconContainer>
       </StyledBottomNavigation>
     </>
