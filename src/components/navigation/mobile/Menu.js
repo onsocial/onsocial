@@ -112,7 +112,7 @@ margin-bottom: 20px;
       &.active,
       &:hover,
       &:focus {
-        background-color: #59e692;
+        background-color: #82E299;
 color: white;
         text-decoration: none;
         transition: background-color 0.3s ease, color 0.3s ease;
