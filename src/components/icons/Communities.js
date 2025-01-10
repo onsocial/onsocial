@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export function Communities() {
   const [hovered, setHovered] = useState(false);
 
-  const strokeColor = hovered ? "#59e692" : "#232528";
+  const strokeColor = hovered ? "#82E299" : "#232528";
 
   return (
     <svg

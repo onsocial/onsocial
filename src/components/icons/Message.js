@@ -8,7 +8,7 @@ export function Message() {
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      fill={hovered ? "#59e692" : "#232528"}
+      fill={hovered ? "#82E299" : "#232528"}
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
