@@ -168,7 +168,7 @@ export function Navigation(props) {
           </IconWrapper>
 
           <IconWrapper>
-            <Link to="/onsocial.near/widget/Test2">
+            <Link to="/onsocial.near/widget/PrivateMailbox">
               <Communities />
             </Link>
           </IconWrapper>
