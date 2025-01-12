@@ -236,7 +236,7 @@ export function Menu(props) {
           </li>
 
           <li>
-<NavigationButton route="/onsocial.near/widget/Test2">
+<NavigationButton route="/onsocial.near/widget/DAO.Tabs">
               <Communities />
               DAO Communities
             </NavigationButton>
