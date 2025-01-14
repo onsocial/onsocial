@@ -12,7 +12,6 @@ import { Home2 } from "../../icons/Home2";
 import { Ai } from "../../icons/Ai";
 import { Dots } from "../../icons/Dots";
 
-// Styling for the top navigation (unchanged)
 const StyledNavigation = styled.div`
   position: sticky;
   top: 0;
@@ -25,8 +24,8 @@ const StyledNavigation = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  background-color: ${({ scrolled }) => (scrolled ? 'white' : 'white')};
-  transform: ${({ hide }) => (hide ? 'translateY(-100%)' : 'translateY(0)')};
+  background-color: ${({ scrolled }) => (scrolled ? "white" : "white")};
+  transform: ${({ hide }) => (hide ? "translateY(-100%)" : "translateY(0)")};
   height: 48px;
 
   .logo-link {
@@ -49,9 +48,6 @@ const StyledNavigation = styled.div`
   }
 `;
 
-
-
-// Styling for the bottom navigation with padding from left and right edges and spacing between icons
 const StyledBottomNavigation = styled.div`
   position: fixed;
   bottom: 0;
@@ -59,53 +55,66 @@ const StyledBottomNavigation = styled.div`
   right: 0;
   width: 100%;
   z-index: 999;
-  padding: 0px 0px;  // 20px padding from left and right
+  padding: 0;
   display: flex;
-  justify-content: space-between;  // Evenly distribute icons
+  justify-content: space-between;
   align-items: center;
   background-color: white;
   border-top: 1px solid #eee;
   height: 48px;
-  transform: ${({ hide }) => (hide ? 'translateY(100%)' : 'translateY(0)')};
+  transform: ${({ hide }) => (hide ? "translateY(100%)" : "translateY(0)")};
   transition: transform 0.3s ease;
 `;
 
 const IconWrapper = styled.div`
-  margin: 0 10px;  // Add margin between icons
+  margin: 0 10px;
 `;
 
 const IconContainer = styled.div`
-  width: 100%;  // Take up the entire width of the bottom navigation
+  width: 100%;
   display: flex;
-  justify-content: space-between;  // Space out the icons evenly
-  padding: 0 20px;  // Padding to ensure 20px from the left and right edges
+  justify-content: space-between;
+  padding: 0 20px;
+`;
+
+const StyledFloatingSVG = styled.div`
+  position: fixed;
+  bottom: 74px;
+  right: 24px;
+  z-index: 1100; /* Above other elements */
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  pointer-events: ${({ isVisible }) => (isVisible ? "auto" : "none")};
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export function Navigation(props) {
   const [scrolled, setScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [hide, setHide] = useState(false); // For top bar visibility
-  const [bottomHide, setBottomHide] = useState(false); // For bottom bar visibility
+  const [hide, setHide] = useState(false); // Top bar visibility
+  const [bottomHide, setBottomHide] = useState(false); // Bottom bar visibility
+  const [showSVG, setShowSVG] = useState(true); // Floating SVG visibility
 
   useEffect(() => {
     const handleScroll = () => {
-      // Handle top navigation bar visibility
       if (window.scrollY > lastScrollY) {
         setHide(true); // Scrolling down
+        setBottomHide(true);
+        setShowSVG(false); // Hide SVG on scroll down
       } else {
         setHide(false); // Scrolling up
+        setBottomHide(false);
+        setShowSVG(true); // Show SVG on scroll up
       }
-
-      // Handle bottom navigation bar visibility
-      if (window.scrollY > lastScrollY) {
-        setBottomHide(true); // Scrolling down
-      } else {
-        setBottomHide(false); // Scrolling up
-      }
-
       setLastScrollY(window.scrollY);
 
-      // Change background for top navigation when scrolling past 50px
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
@@ -133,7 +142,6 @@ export function Navigation(props) {
             onSignIn={() => props.requestSignIn()}
           />
         )}
-
         <Link
           to="/"
           className="logo-link"
@@ -144,12 +152,9 @@ export function Navigation(props) {
           <OnSocialLogo />
         </Link>
         <div className="d-flex">
-          
-                        <IconWrapper>
-              <Dots />
-
-            </IconWrapper>
-                    
+          <IconWrapper>
+            <Dots />
+          </IconWrapper>
         </div>
       </StyledNavigation>
 
@@ -160,30 +165,25 @@ export function Navigation(props) {
               <Home2 />
             </Link>
           </IconWrapper>
-
           <IconWrapper>
             <Link to="/onsocial.near/widget/Search.Tabs">
               <Search />
             </Link>
           </IconWrapper>
-
           <IconWrapper>
             <Link to="/onsocial.near/widget/DAO.Tabs">
               <Communities />
             </Link>
           </IconWrapper>
-
           <IconWrapper>
             <Ai />
           </IconWrapper>
-
           <IconWrapper>
             <NotificationWidget
               className="nav-notification-widget"
               notificationButtonSrc={props.widgets.notificationButton}
             />
           </IconWrapper>
-
           <IconWrapper>
             <Link to="/onsocial.near/widget/PrivateMailbox">
               <Message />
@@ -191,6 +191,30 @@ export function Navigation(props) {
           </IconWrapper>
         </IconContainer>
       </StyledBottomNavigation>
+
+      <StyledFloatingSVG isVisible={showSVG}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="120 120 60 60"
+          style={{ width: "60px", height: "60px" }}
+        >
+          <g>
+            <ellipse
+              rx="30"
+              ry="30"
+              transform="translate(150 150)"
+              fill="#82e299"
+              strokeWidth="0"
+            />
+          </g>
+          <g transform="matrix(.819758 0 0 0.819758 135.351745 135.351542)">
+            <path
+              d="M0,35.667c0,0,11.596-37.07,35.738-35.55c0,0-2.994,4.849-10.551,6.416c0,0,3.518.429,6.369-.522c0,0-1.711,5.515-11.025,6.273c0,0,5.133,1.331,7.414.57c0,0-.619,4.111-10.102,6.154-.562.12-4.347,1.067-1.306,1.448c0,0,4.371.763,5.514.381c0,0-3.744,5.607-12.928,5.132-.903-.047-1.332,0-1.332,0L0,35.667Z"
+              fill="#fff"
+            />
+          </g>
+        </svg>
+      </StyledFloatingSVG>
     </>
   );
 }
