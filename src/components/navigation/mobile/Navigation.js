@@ -80,11 +80,11 @@ const IconContainer = styled.div`
 
 const StyledFloatingSVG = styled.div`
   position: fixed;
-  bottom: 64px;
-  right: 14px;
+  bottom: 60px;
+  right: 12px;
   z-index: 1;
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   cursor: pointer;
   transition: opacity 0.3s ease;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
