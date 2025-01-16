@@ -82,7 +82,7 @@ const StyledFloatingSVG = styled.div`
   position: fixed;
   bottom: 60px;
   right: 12px;
-  z-index: 1;
+  z-index: 6;
   width: 56px;
   height: 56px;
   cursor: pointer;
