@@ -80,14 +80,15 @@ const IconContainer = styled.div`
 
 const StyledFloatingSVG = styled.div`
   position: fixed;
-  bottom: 60px;
-  right: 12px;
+  bottom: ${({ isVisible }) => (isVisible ? "50px" : "30px")};
+  right: 2px;
   z-index: 6;
-  width: 56px;
-  height: 56px;
+  width: ${({ isVisible }) => (isVisible ? "72px" : "48px")};
+  height: ${({ isVisible }) => (isVisible ? "72px" : "48px")};
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: bottom 0.3s ease, transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transform: ${({ isVisible }) => (isVisible ? "scale(1)" : "scale(0.8)")};
   pointer-events: ${({ isVisible }) => (isVisible ? "auto" : "none")};
 
   svg {
@@ -193,13 +194,11 @@ export function Navigation(props) {
         </IconContainer>
       </StyledBottomNavigation>
 
-     <StyledFloatingSVG isVisible={showSVG}>
-  <Link to="/onsocial.near/widget/MainPage.N.Compose">
-    <PostButton />
-  </Link>
-</StyledFloatingSVG>
-
-
+      <StyledFloatingSVG isVisible={showSVG}>
+        <Link to="/onsocial.near/widget/MainPage.N.Compose">
+          <PostButton />
+        </Link>
+      </StyledFloatingSVG>
     </>
   );
 }
