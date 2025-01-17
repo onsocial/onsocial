@@ -8,6 +8,7 @@ import { SignInButton } from "../SignInButton";
 import { UserDropdown } from "./UserDropdown";
 import { NotificationWidget } from "../NotificationWidget";
 import { SearchWidget } from "../SearchWidget"; // Import the SearchWidget
+import { PostButton } from "../../icons/PostButton";
 
 const StyledNavigation = styled.div`
   position: sticky;
@@ -60,15 +61,22 @@ const StyledNavigation = styled.div`
       margin-left: 4px;
     }
 
-.nav-notification-widget {
-      margin-right: 20px; /* Position it nicely between other elements */
+    .nav-notification-widget {
+      margin-right: 20px;
     }
 
     .nav-search-widget {
-      margin-right: 20px; /* Position it nicely between other elements */
-margin-bottom: 1px;
+      margin-right: 20px;
+      margin-bottom: 1px;
     }
   }
+`;
+
+const PostButtonWrapper = styled.div`
+  position: fixed;
+  bottom: 20px; /* Set the bottom distance */
+  right: 20px; /* Set the right distance */
+  z-index: 1001; /* Ensure it's above other content */
 `;
 
 export function DesktopNavigation(props) {
@@ -80,9 +88,9 @@ export function DesktopNavigation(props) {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsHidden(true);
+        setIsHidden(true); // Hide the top bar when scrolling down
       } else {
-        setIsHidden(false);
+        setIsHidden(false); // Show the top bar when scrolling up
       }
 
       setLastScrollY(currentScrollY);
@@ -96,44 +104,52 @@ export function DesktopNavigation(props) {
   }, [lastScrollY]);
 
   return (
-    <StyledNavigation className={isHidden ? "hidden" : ""}>
-      <div className="container">
-        <Link
-          to="/"
-          className="logo-link"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-        >
-          <Logotype />
-        </Link>
-        <div className="navigation-section">
-          <NavigationButton route="/">Home</NavigationButton>
-          <NavigationButton route="/edit">Editor</NavigationButton>
-          <NavigationButton href={props.documentationHref}>
-            Docs
-            <ArrowUpRight />
-          </NavigationButton>
+    <>
+      <StyledNavigation className={isHidden ? "hidden" : ""}>
+        <div className="container">
+          <Link
+            to="/"
+            className="logo-link"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            <Logotype />
+          </Link>
+          <div className="navigation-section">
+            <NavigationButton route="/">Home</NavigationButton>
+            <NavigationButton route="/edit">Editor</NavigationButton>
+            <NavigationButton href={props.documentationHref}>
+              Docs
+              <ArrowUpRight />
+            </NavigationButton>
+          </div>
+          <div className="user-section">
+            {props.signedIn && (
+              <>
+                <SearchWidget
+                  className="nav-search-widget"
+                  searchButtonSrc={props.widgets.searchButton}
+                />
+                <NotificationWidget
+                  notificationButtonSrc={props.widgets.notificationButton}
+                />
+                <UserDropdown {...props} />
+              </>
+            )}
+            {!props.signedIn && (
+              <SignInButton onSignIn={() => props.requestSignIn()} />
+            )}
+          </div>
         </div>
-        <div className="user-section">
-          {props.signedIn && (
-            <>
-              {/* Render SearchWidget if signed in */}
-              <SearchWidget
-                className="nav-search-widget"
-                searchButtonSrc={props.widgets.searchButton}
-              />
-              <NotificationWidget
-                notificationButtonSrc={props.widgets.notificationButton}
-              />
-              <UserDropdown {...props} />
-            </>
-          )}
-          {!props.signedIn && (
-            <SignInButton onSignIn={() => props.requestSignIn()} />
-          )}
-        </div>
-      </div>
-    </StyledNavigation>
+      </StyledNavigation>
+
+      {/* Always-visible PostButton */}
+     <PostButtonWrapper>
+  <Link to="/onsocial.near/widget/MainPage.N.Compose">
+    <PostButton />
+  </Link>
+</PostButtonWrapper>
+    </>
   );
 }
