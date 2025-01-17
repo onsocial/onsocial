@@ -83,12 +83,12 @@ const StyledFloatingSVG = styled.div`
   bottom: ${({ isVisible }) => (isVisible ? "50px" : "30px")};
   right: 2px;
   z-index: 6;
-  width: ${({ isVisible }) => (isVisible ? "72px" : "48px")};
-  height: ${({ isVisible }) => (isVisible ? "72px" : "48px")};
+  width: ${({ isVisible }) => (isVisible ? "72px" : "20px")};
+  height: ${({ isVisible }) => (isVisible ? "72px" : "20px")};
   cursor: pointer;
   transition: bottom 0.3s ease, transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transform: ${({ isVisible }) => (isVisible ? "scale(1)" : "scale(0.8)")};
+  transform: ${({ isVisible }) => (isVisible ? "scale(1)" : "scale(0.1)")};
   pointer-events: ${({ isVisible }) => (isVisible ? "auto" : "none")};
 
   svg {
