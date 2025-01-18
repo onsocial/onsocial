@@ -14,6 +14,7 @@ import { Dots } from "../../icons/Dots";
 import { PostButton } from "../../icons/PostButton";
 
 const StyledNavigation = styled.div`
+  font-family: 'Open Sans', sans-serif;
   position: sticky;
   top: 0;
   left: 0;
@@ -48,7 +49,6 @@ const StyledNavigation = styled.div`
     background: black;
   }
 `;
-
 const StyledBottomNavigation = styled.div`
   position: fixed;
   bottom: 0;
