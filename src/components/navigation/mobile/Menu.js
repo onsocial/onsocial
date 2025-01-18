@@ -21,6 +21,7 @@ const StyledMenu = styled.div`
   display: flex;
   transition: 350ms;
   transform: translateX(-100%);
+  font-family: 'Open Sans', sans-serif;
 
   &.show {
     transform: translateX(0);
@@ -60,7 +61,7 @@ const StyledMenu = styled.div`
 
     .profile-name {
       color: #232528;
-      font-weight: var(--font-weight-bold);
+      font-weight: 600;
       margin-top: 5px;
     }
 
@@ -79,16 +80,15 @@ const StyledMenu = styled.div`
       padding: 25px;
     }
 
-    /* Hairline with padding inside */
     .hairline-wrapper {
-      padding-left: 25px; /* Apply padding to the left */
-      padding-right: 25px; /* Apply padding to the right */
+      padding-left: 25px;
+      padding-right: 25px;
     }
 
     .hairline {
       height: 1px;
       background-color: #eee;
-margin-bottom: 20px;
+      margin-bottom: 20px;
     }
   }
 
@@ -101,7 +101,7 @@ margin-bottom: 20px;
       display: flex;
       align-items: center;
       color: #232528;
-      font-weight: var(--font-weight-bold);
+      font-weight: 600;
       border-radius: 0;
       padding: 25px;
 
@@ -113,7 +113,7 @@ margin-bottom: 20px;
       &:hover,
       &:focus {
         background-color: #82E299;
-color: white;
+        color: white;
         text-decoration: none;
         transition: background-color 0.3s ease, color 0.3s ease;
         svg {
@@ -134,7 +134,7 @@ color: white;
 
     a,
     button {
-      padding: 14px 10px 14px 25px; /* Apply 25px padding to the left */
+      padding: 14px 10px 14px 25px;
       transition: background-color 0.3s ease, padding 0.3s ease;
       border-radius: 0px;
     }
@@ -144,7 +144,7 @@ color: white;
     background: none;
     border: none;
     color: #232528;
-    font-weight: var(--font-weight-bold);
+    font-weight: 600;
     padding: 28px 0;
 
     svg {

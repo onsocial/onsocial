@@ -8,18 +8,19 @@ const StyledNavigationButton = styled.div`
     font-size: 16px;
     padding: 12px;
     border-radius: 50px;
-    font-weight: var(--font-weight-bold);
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
     height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
- transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 
-    &:hover,
+     &:hover,
     &.active {
-      color: #232528;
+      color: white;
       text-decoration: none;
-      background-color: #59e692;
+      background-color: #82e299;
     }
   }
   &.disabled {

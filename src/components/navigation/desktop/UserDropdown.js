@@ -14,8 +14,14 @@ import MobileQRModal from "../MobileQRModal";
 const StyledDropdown = styled.div`
   button,
   a {
-    font-weight: var(--font-weight-medium);
+    font-family: "Open Sans", sans-serif; 
+    font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
+
+    :hover,
+    :focus {
+      color: white;
+    }
   }
   .dropdown-toggle {
     display: flex;
@@ -66,6 +72,7 @@ const StyledDropdown = styled.div`
 
     button,
     a {
+      font-family: "Open Sans", sans-serif;
       color: #232528;
       display: flex;
       align-items: center;
@@ -76,12 +83,12 @@ const StyledDropdown = styled.div`
       :hover,
       :focus {
         text-decoration: none;
-        background-color: #59e692;
-        color: #232528;
+        background-color: #82e299;
+        color: white;
 
         svg {
           path {
-            stroke: #232528;
+            stroke: white;
           }
         }
       }
