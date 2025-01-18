@@ -82,7 +82,7 @@ const StyledFloatingSVG = styled.div`
   position: fixed;
   bottom: ${({ isVisible }) => (isVisible ? "50px" : "30px")};
   right: 2px;
-  z-index: 6;
+  z-index: 5;
   width: ${({ isVisible }) => (isVisible ? "72px" : "20px")};
   height: ${({ isVisible }) => (isVisible ? "72px" : "20px")};
   cursor: pointer;
