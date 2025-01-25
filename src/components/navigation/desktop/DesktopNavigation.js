@@ -119,22 +119,19 @@ export function DesktopNavigation(props) {
           </Link>
           <div className="navigation-section">
             <NavigationButton route="/">Home</NavigationButton>
-            <NavigationButton route="/search">Search</NavigationButton>
-	    <NavigationButton route="/daos">DAOs</NavigationButton>
-	    <NavigationButton route="/ai">Ai</NavigationButton>
-	    <NavigationButton route="/messages">Messages</NavigationButton>
+            <NavigationButton route="/onsocial.near/widget/Search.Tabs">Search</NavigationButton>
+	    <NavigationButton route="/onsocial.near/widget/DAO.Tabs">DAOs</NavigationButton>
+	    
+	    <NavigationButton route="/onsocial.near/widget/PrivateMailbox">Messages</NavigationButton>
 
 
 	             </div>
           <div className="user-section">
             {props.signedIn && (
               <>
-                <SearchWidget
-                  className="nav-search-widget"
-                  searchButtonSrc={props.widgets.searchButton}
-                />
-                <NotificationWidget
+                                <NotificationWidget
                   notificationButtonSrc={props.widgets.notificationButton}
+
                 />
                 <UserDropdown {...props} />
               </>

@@ -118,6 +118,10 @@ const StyledMenu = styled.div`
         text-decoration: none;
         transition: background-color 0.3s ease, color 0.3s ease;
         svg {
+ellipse {
+            stroke: white;
+          }
+
           path {
             stroke: white;
           }
