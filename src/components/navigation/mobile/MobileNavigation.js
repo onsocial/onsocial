@@ -42,6 +42,9 @@ export function MobileNavigation(props) {
         return setCurrentPage("Notifications");
       case `/${props.widgets.onsocial}`:
         return setCurrentPage("OnSocial DAO");
+      case `/${props.widgets.communities}`:
+        return setCurrentPage("Communities");
+
       case "/edit":
         return setCurrentPage("Create");
       default:

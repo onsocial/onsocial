@@ -40,6 +40,7 @@ const MainnetWidgets = {
   messages: "onsocial.near/widget/PrivateMailbox",
   notifications: "onsocial.near/widget/NotificationFeed",
   onsocial: "onsocial.near/widget/DAO.Page?daoId=onsocial.sputnik-dao.near",
+  communities: "onsocial.near/widget/DAO.Page",
   
   
 };
