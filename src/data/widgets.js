@@ -35,6 +35,13 @@ const MainnetWidgets = {
   profileInlineBlock: "mob.near/widget/Profile.InlineBlock",
   viewHistory: "bozon.near/widget/WidgetHistory",
   starButton: "mob.near/widget/N.StarButton",
+  search: "onsocial.near/widget/Search.Tabs",
+  daos: "onsocial.near/widget/DAO.Tabs",
+  messages: "onsocial.near/widget/PrivateMailbox",
+  notifications: "onsocial.near/widget/NotificationFeed",
+  onsocial: "onsocial.near/widget/DAO.Page?daoId=onsocial.sputnik-dao.near",
+  
+  
 };
 
 export const Widgets =

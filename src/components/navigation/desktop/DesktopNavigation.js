@@ -7,7 +7,8 @@ import { ArrowUpRight } from "../../icons/ArrowUpRight";
 import { SignInButton } from "../SignInButton";
 import { UserDropdown } from "./UserDropdown";
 import { NotificationWidget } from "../NotificationWidget";
-import { SearchWidget } from "../SearchWidget"; // Import the SearchWidget
+import { SearchWidget } from "../SearchWidget"; 
+
 import { PostButton } from "../../icons/PostButton";
 
 const StyledNavigation = styled.div`
@@ -118,12 +119,13 @@ export function DesktopNavigation(props) {
           </Link>
           <div className="navigation-section">
             <NavigationButton route="/">Home</NavigationButton>
-            <NavigationButton route="/edit">Editor</NavigationButton>
-            <NavigationButton href={props.documentationHref}>
-              Docs
-              <ArrowUpRight />
-            </NavigationButton>
-          </div>
+            <NavigationButton route="/search">Search</NavigationButton>
+	    <NavigationButton route="/daos">DAOs</NavigationButton>
+	    <NavigationButton route="/ai">Ai</NavigationButton>
+	    <NavigationButton route="/messages">Messages</NavigationButton>
+
+
+	             </div>
           <div className="user-section">
             {props.signedIn && (
               <>

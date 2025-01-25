@@ -4,6 +4,7 @@ import { Close } from "../../icons/Close";
 import { Home } from "../../icons/Home";
 import { UserCircle } from "../../icons/UserCircle";
 import { Communities } from "../../icons/Communities";
+import { OnSocialDAO } from "../../icons/OnSocialDAO";
 import { LogOut } from "../../icons/LogOut";
 import { Withdraw } from "../../icons/Withdraw";
 import { Widget, useNear } from "near-social-vm";
@@ -236,9 +237,9 @@ export function Menu(props) {
           </li>
 
           <li>
-<NavigationButton route="/onsocial.near/widget/DAO.Tabs">
-              <Communities />
-              DAO Communities
+<NavigationButton route="/onsocial.near/widget/DAO.Page?daoId=onsocial.sputnik-dao.near">
+              <OnSocialDAO />
+              OnSocial DAO
             </NavigationButton>
           </li>
 

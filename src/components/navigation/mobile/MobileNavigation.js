@@ -14,14 +14,34 @@ export function MobileNavigation(props) {
     setShowMenu(false);
     getCurrentPage();
     allowScroll();
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
 
   const getCurrentPage = () => {
+    // Check if the URL contains the query parameter for the OnSocial DAO page
+    const params = new URLSearchParams(location.search);
+    const daoId = params.get("daoId");
+
+    if (daoId === "onsocial.sputnik-dao.near") {
+      return setCurrentPage("OnSocial DAO");
+    }
+
     switch (location.pathname) {
       case "/":
         return setCurrentPage("Home");
       case `/${props.widgets.profilePage}`:
         return setCurrentPage("Profile");
+      case `/${props.widgets.search}`:
+        return setCurrentPage("Search");
+      case `/${props.widgets.daos}`:
+        return setCurrentPage("Communities");
+      case `/${props.widgets.ai}`:
+        return setCurrentPage("Ai");
+      case `/${props.widgets.messages}`:
+        return setCurrentPage("Messages");
+      case `/${props.widgets.notifications}`:
+        return setCurrentPage("Notifications");
+      case `/${props.widgets.onsocial}`:
+        return setCurrentPage("OnSocial DAO");
       case "/edit":
         return setCurrentPage("Create");
       default:
