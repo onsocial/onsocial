@@ -44,6 +44,8 @@ export function MobileNavigation(props) {
         return setCurrentPage("OnSocial DAO");
       case `/${props.widgets.communities}`:
         return setCurrentPage("Communities");
+      case `/${props.widgets.marketplace}`:
+        return setCurrentPage("Marketplace");
 
       case "/edit":
         return setCurrentPage("Create");
