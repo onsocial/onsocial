@@ -36,9 +36,10 @@ if ("serviceWorker" in navigator) {
     document.body.appendChild(installButton);
 
     // Style the button (customize it as you like)
-     installButton.style.position = 'fixed';
+    installButton.style.position = 'fixed';
 installButton.style.bottom = '5px';
-installButton.style.right = '40px';
+installButton.style.left = '50%';
+installButton.style.transform = 'translate(-50%, -50%)';
 installButton.style.padding = '10px 20px';
 installButton.style.backgroundColor = '#232528';
 installButton.style.color = 'white';
@@ -46,6 +47,15 @@ installButton.style.border = 'none';
 installButton.style.borderRadius = '50px';
 installButton.style.fontFamily = "'Open Sans', sans-serif";
 installButton.style.fontWeight = '500';
+
+// Hover effect
+installButton.addEventListener('mouseover', function() {
+    installButton.style.backgroundColor = 'black';
+});
+
+installButton.addEventListener('mouseout', function() {
+    installButton.style.backgroundColor = '#232528';
+});
 
     // When the button is clicked, show the install prompt
     installButton.addEventListener("click", () => {
