@@ -120,7 +120,7 @@ export function DesktopNavigation(props) {
           <div className="navigation-section">
             <NavigationButton route="/">Home</NavigationButton>
             <NavigationButton route="/onsocial.near/widget/Search.Tabs">Search</NavigationButton>
-	    <NavigationButton route="/onsocial.near/widget/DAO.Tabs">DAOs</NavigationButton>
+	    <NavigationButton route="/onsocial.near/widget/DAO.Tabs">Communities</NavigationButton>
 	    
 	    <NavigationButton route="/onsocial.near/widget/PrivateMailbox">Messages</NavigationButton>
 
