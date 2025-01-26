@@ -37,9 +37,9 @@ if ("serviceWorker" in navigator) {
 
     // Style the button (customize it as you like)
     installButton.style.position = 'fixed';
-installButton.style.bottom = '5px';
-installButton.style.left = '50%';
-installButton.style.transform = 'translate(-50%, -50%)';
+installButton.style.bottom = '5px'; 
+installButton.style.left = '50%'; 
+installButton.style.transform = 'translateX(-50%)'; 
 installButton.style.padding = '10px 20px';
 installButton.style.backgroundColor = '#232528';
 installButton.style.color = 'white';
