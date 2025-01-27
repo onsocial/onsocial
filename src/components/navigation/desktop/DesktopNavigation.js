@@ -77,7 +77,7 @@ const PostButtonWrapper = styled.div`
   position: fixed;
   bottom: 20px; /* Set the bottom distance */
   right: 20px; /* Set the right distance */
-  z-index: 1001; /* Ensure it's above other content */
+  z-index: 5; /* Ensure it's above other content */
 `;
 
 export function DesktopNavigation(props) {
