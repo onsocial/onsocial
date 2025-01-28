@@ -42,6 +42,7 @@ const MainnetWidgets = {
   onsocial: "onsocial.near/widget/DAO.Page?daoId=onsocial.sputnik-dao.near",
   communities: "onsocial.near/widget/DAO.Page",
   marketplace: "onsocial.near/widget/App.Index",
+  daosettings: "onsocial.near/widget/DAO.Settings",
   
   
 };
