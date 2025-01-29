@@ -13,7 +13,7 @@ export function Communities() {
       height="24"
       fill={fillColor}
       stroke={strokeColor}
-      strokeWidth="1"
+      strokeWidth="0.2" // Set stroke width to 0.2
       className="bi bi-people"
       viewBox="0 0 16 16"
       onMouseEnter={() => setHovered(true)}
