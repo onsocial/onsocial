@@ -11,6 +11,7 @@ import { Search } from "../../icons/Search";
 import { Home2 } from "../../icons/Home2";
 import { Ai } from "../../icons/Ai";
 import { Dots } from "../../icons/Dots";
+import { CommunitiesCreate } from "../../icons/CommunitiesCreate";
 import { PostButton } from "../../icons/PostButton";
 
 const StyledNavigation = styled.div`

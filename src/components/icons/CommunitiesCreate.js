@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-export function Communities() {
+export function CommunitiesCreate() {
   const [hovered, setHovered] = useState(false);
 
   const fillColor = hovered ? "#82E299" : "#232528";
-  const strokeColor = hovered ? "#FF6347" : "#232528"; // Different color for stroke on hover
+  const strokeColor = hovered ? "#82E299" : "#232528"; // Different color for stroke on hover
 
   return (
     <svg
