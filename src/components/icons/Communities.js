@@ -3,7 +3,8 @@ import React, { useState } from "react";
 export function Communities() {
   const [hovered, setHovered] = useState(false);
 
-  const fillColor = hovered ? "#82E299" : "#232528";
+  const fillColor = hovered ? "#82E299" : "#232528"; // Fill color changes on hover
+  const strokeColor = hovered ? "#82E299" : "#232528"; // Stroke color changes to a different color on hover
 
   return (
     <svg
@@ -11,6 +12,8 @@ export function Communities() {
       width="24"
       height="24"
       fill={fillColor}
+      stroke={strokeColor}
+      strokeWidth="1"
       className="bi bi-people"
       viewBox="0 0 16 16"
       onMouseEnter={() => setHovered(true)}
