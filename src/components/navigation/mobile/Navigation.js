@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // import useLocation for checking the current page
 import { MobileMenuButton } from "./MobileMenuButton";
 import { OnSocialLogo } from "../../icons/OnSocialLogo";
 import { NotificationWidget } from "../NotificationWidget";
@@ -50,6 +50,7 @@ const StyledNavigation = styled.div`
     background: black;
   }
 `;
+
 const StyledBottomNavigation = styled.div`
   position: fixed;
   bottom: 0;
@@ -104,6 +105,7 @@ export function Navigation(props) {
   const [hide, setHide] = useState(false); // Top bar visibility
   const [bottomHide, setBottomHide] = useState(false); // Bottom bar visibility
   const [showSVG, setShowSVG] = useState(true); // Floating SVG visibility
+  const location = useLocation(); // Get the current location (path) using useLocation
 
   useEffect(() => {
     const handleScroll = () => {
@@ -154,7 +156,13 @@ export function Navigation(props) {
         >
           <OnSocialLogo />
         </Link>
-        <div className="d-flex">
+        <div className="d-flex" style={{ marginLeft: "auto", display: "flex" }}>
+          {/* Conditionally render CommunitiesCreate icon to the left of Dots icon */}
+          {location.pathname === "/onsocial.near/widget/DAO.Tabs" && (
+            <IconWrapper>
+              <CommunitiesCreate />
+            </IconWrapper>
+          )}
           <IconWrapper>
             <Dots />
           </IconWrapper>
