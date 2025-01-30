@@ -48,6 +48,8 @@ export function MobileNavigation(props) {
         return setCurrentPage("Marketplace");
       case `/${props.widgets.daosettings}`:
         return setCurrentPage("DAO Settings");
+      case `/${props.widgets.communitiescreate}`:
+        return setCurrentPage("Create DAO");
 
       case "/edit":
         return setCurrentPage("Create");

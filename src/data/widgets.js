@@ -43,6 +43,7 @@ const MainnetWidgets = {
   communities: "onsocial.near/widget/DAO.Page",
   marketplace: "onsocial.near/widget/App.Index",
   daosettings: "onsocial.near/widget/DAO.Settings",
+  communitiescreate: "onsocial.near/widget/DAO.Create",
   
   
 };

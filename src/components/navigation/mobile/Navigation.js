@@ -157,17 +157,19 @@ export function Navigation(props) {
           <OnSocialLogo />
         </Link>
         <div className="d-flex" style={{ marginLeft: "auto", display: "flex" }}>
-          {/* Replace Dots with CommunitiesCreate when on the Communities page */}
-          {location.pathname === "/onsocial.near/widget/DAO.Tabs" ? (
-            <IconWrapper>
-              <CommunitiesCreate />
-            </IconWrapper>
-          ) : (
-            <IconWrapper>
-              <Dots />
-            </IconWrapper>
-          )}
-        </div>
+  {location.pathname === "/onsocial.near/widget/DAO.Tabs" ? (
+    <IconWrapper>
+      <Link to="/onsocial.near/widget/DAO.Create">
+        <CommunitiesCreate />
+      </Link>
+    </IconWrapper>
+  ) : (
+    <IconWrapper>
+      <Dots />
+    </IconWrapper>
+  )}
+</div>
+
       </StyledNavigation>
 
       <StyledBottomNavigation hide={bottomHide}>
