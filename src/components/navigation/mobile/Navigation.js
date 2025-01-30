@@ -157,15 +157,16 @@ export function Navigation(props) {
           <OnSocialLogo />
         </Link>
         <div className="d-flex" style={{ marginLeft: "auto", display: "flex" }}>
-          {/* Conditionally render CommunitiesCreate icon to the left of Dots icon */}
-          {location.pathname === "/onsocial.near/widget/DAO.Tabs" && (
+          {/* Replace Dots with CommunitiesCreate when on the Communities page */}
+          {location.pathname === "/onsocial.near/widget/DAO.Tabs" ? (
             <IconWrapper>
               <CommunitiesCreate />
             </IconWrapper>
+          ) : (
+            <IconWrapper>
+              <Dots />
+            </IconWrapper>
           )}
-          <IconWrapper>
-            <Dots />
-          </IconWrapper>
         </div>
       </StyledNavigation>
 
