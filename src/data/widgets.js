@@ -32,7 +32,7 @@ const MainnetWidgets = {
   profilePage: "onsocial.near/widget/ProfilePage",
   profileName: "patrick.near/widget/ProfileName",
   editorComponentSearch: "mob.near/widget/Editor.ComponentSearch",
-  profileInlineBlock: "mob.near/widget/Profile.InlineBlock",
+  profileInlineBlock: "onsocial.near/widget/Profile.InlineBlock",
   viewHistory: "bozon.near/widget/WidgetHistory",
   starButton: "mob.near/widget/N.StarButton",
   search: "onsocial.near/widget/Search.Tabs",
