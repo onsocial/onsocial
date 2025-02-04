@@ -5,10 +5,10 @@
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="apple-touch-icon" href="/app.png" />
-    
+
     <!-- Manifest for PWA -->
     <link rel="manifest" href="/manifest.json" />
-    
+
     <meta name="description" content="Own your social experience" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@OnSocial_" />
@@ -17,6 +17,17 @@
     <meta property="og:title" content="OnSocial" />
     <meta property="og:description" content="Own your social experience" />
     <title>OnSocial</title>
+
+    <script>
+      // Redirect users based on their account ID in the URL
+      window.addEventListener("DOMContentLoaded", function () {
+        const path = window.location.pathname.substring(1); // Get the path after "/"
+        if (path) {
+          // Redirect dynamically
+          window.location.href = `https://onsocial.id/#/${path}/widget/MyPage?accountId=${path}`;
+        }
+      });
+    </script>
   </head>
   <body>
     <noscript style="white-space: pre; font-family: monospace">
@@ -30,59 +41,52 @@
       let deferredPrompt;
 
       // Check if the prompt has already been dismissed before (using localStorage)
-      if (!localStorage.getItem('installPromptDismissed')) {
-        window.addEventListener('beforeinstallprompt', (event) => {
+      if (!localStorage.getItem("installPromptDismissed")) {
+        window.addEventListener("beforeinstallprompt", (event) => {
           // Prevent the default install prompt from showing up automatically
           event.preventDefault();
-          
+
           // Save the event for later use
           deferredPrompt = event;
-          
+
           // Create and show a custom "Install" button
-          const installButton = document.createElement('button');
-          installButton.innerText = 'Install OnSocial';
+          const installButton = document.createElement("button");
+          installButton.innerText = "Install OnSocial";
           document.body.appendChild(installButton);
 
-          // Style the button (you can adjust the styles as needed)
-          installButton.style.position = 'fixed';
-installButton.style.bottom = '5px'; 
-installButton.style.left = '50%'; 
-installButton.style.transform = 'translateX(-50%)'; 
-installButton.style.padding = '10px 20px';
-installButton.style.backgroundColor = '#232528';
-installButton.style.color = 'white';
-installButton.style.border = 'none';
-installButton.style.borderRadius = '50px';
-installButton.style.fontFamily = "'Open Sans', sans-serif";
-installButton.style.fontWeight = '500';
+          // Style the button
+          installButton.style.position = "fixed";
+          installButton.style.bottom = "5px";
+          installButton.style.left = "50%";
+          installButton.style.transform = "translateX(-50%)";
+          installButton.style.padding = "10px 20px";
+          installButton.style.backgroundColor = "#232528";
+          installButton.style.color = "white";
+          installButton.style.border = "none";
+          installButton.style.borderRadius = "50px";
+          installButton.style.fontFamily = "'Open Sans', sans-serif";
+          installButton.style.fontWeight = "500";
 
-// Hover effect
-installButton.addEventListener('mouseover', function() {
-    installButton.style.backgroundColor = 'black';
-});
+          // Hover effect
+          installButton.addEventListener("mouseover", function () {
+            installButton.style.backgroundColor = "black";
+          });
 
-installButton.addEventListener('mouseout', function() {
-    installButton.style.backgroundColor = '#232528';
-});
-
-
+          installButton.addEventListener("mouseout", function () {
+            installButton.style.backgroundColor = "#232528";
+          });
 
           // When the "Install" button is clicked, trigger the install prompt
-          installButton.addEventListener('click', () => {
-            // Show the install prompt when the user clicks the button
+          installButton.addEventListener("click", () => {
             deferredPrompt.prompt();
-            
-            // Wait for the user's response to the prompt
             deferredPrompt.userChoice.then((choiceResult) => {
-              if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the install prompt');
+              if (choiceResult.outcome === "accepted") {
+                console.log("User accepted the install prompt");
               } else {
-                console.log('User dismissed the install prompt');
-                // Store in localStorage so the prompt won't show again
-                localStorage.setItem('installPromptDismissed', 'true');
+                console.log("User dismissed the install prompt");
+                localStorage.setItem("installPromptDismissed", "true");
               }
-              // Remove the install button and reset the deferredPrompt
-              installButton.style.display = 'none';
+              installButton.style.display = "none";
               deferredPrompt = null;
             });
           });
