@@ -1,15 +1,14 @@
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+export async function getServerSideProps({ params }) {
+  const { accountId } = params;
+
+  return {
+    redirect: {
+      destination: `https://onsocial.id/#/${accountId}/widget/MyPage?accountId=${accountId}`,
+      permanent: false, // Set to true for a permanent (301) redirect
+    },
+  };
+}
 
 export default function RedirectPage() {
-  const router = useRouter();
-  const { accountId } = router.query;
-
-  useEffect(() => {
-    if (accountId) {
-      window.location.href = `https://onsocial.id/#/widget/MyPage?accountId=${accountId}`;
-    }
-  }, [accountId]);
-
   return <p>Redirecting...</p>;
 }
