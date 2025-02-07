@@ -11,6 +11,7 @@ import { Widget, useNear } from "near-social-vm";
 import { NavigationButton } from "../NavigationButton";
 import { SignInButton } from "../SignInButton";
 import { Link } from "react-router-dom";
+import ProfileImage from "../ui/ProfileImage"; // ✅ Import ProfileImage
 
 const StyledMenu = styled.div`
   position: fixed;
@@ -194,14 +195,14 @@ export function Menu(props) {
               to={`/${props.widgets.profilePage}?accountId=${props.signedAccountId}`}
               className="profile-link"
             >
-              <Widget
-                src={props.widgets.profileImage}
-                props={{
-                  accountId: props.signedAccountId,
-                  className: "d-inline-block",
-                  style: { width: "56px", height: "56px" },
-                }}
+              {/* ✅ Replaced Widget with ProfileImage */}
+              <ProfileImage
+                accountId={props.signedAccountId}
+                className="d-inline-block"
+                style={{ width: "56px", height: "56px" }}
+                popover={true}
               />
+
               {props.widgets.profileName && (
                 <div className="profile-name">
                   <Widget src={props.widgets.profileName} />
