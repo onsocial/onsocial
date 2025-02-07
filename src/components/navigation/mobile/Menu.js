@@ -12,6 +12,7 @@ import { NavigationButton } from "../NavigationButton";
 import { SignInButton } from "../SignInButton";
 import { Link } from "react-router-dom";
 import ProfileImage from "../ui/ProfileImage"; // ✅ Import ProfileImage
+import ProfileName from "../ui/ProfileName";
 
 const StyledMenu = styled.div`
   position: fixed;
@@ -203,11 +204,8 @@ export function Menu(props) {
                 popover={true}
               />
 
-              {props.widgets.profileName && (
-                <div className="profile-name">
-                  <Widget src={props.widgets.profileName} />
-                </div>
-              )}
+                  <ProfileName accountId={props.signedAccountId} />
+
               <div className="profile-username">{props.signedAccountId}</div>
             </Link>
           ) : (
