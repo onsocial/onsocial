@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Close } from "../../icons/Close";
 import { Home } from "../../icons/Home";
 import { UserCircle } from "../../icons/UserCircle";
+import { User } from "../../icons/User";
 import { Communities } from "../../icons/Communities";
 import { OnSocialDAO } from "../../icons/OnSocialDAO";
 import { LogOut } from "../../icons/LogOut";
@@ -255,7 +256,7 @@ props={{
               disabled={!props.signedIn}
               route={`/${props.widgets.profilePage}?accountId=${props.signedAccountId}`}
             >
-              <UserCircle />
+              <User />
               Profile
             </NavigationButton>
 
