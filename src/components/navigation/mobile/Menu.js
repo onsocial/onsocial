@@ -67,12 +67,19 @@ const StyledMenu = styled.div`
       color: #232528;
       font-weight: 600;
       margin-top: 5px;
+      font-size: 16px;
+margin-bottom: -2px;
     }
 
     .profile-username {
-      color: #687076;
+      color: #58606F;
+      font-size: 14px;
     }
-
+    .follow-stats {
+      color: #58606F;
+      font-size: 14px;
+      margin-top: 5px;
+    }
     .profile-name,
     .profile-username {
       text-overflow: ellipsis;
@@ -207,7 +214,7 @@ export function Menu(props) {
 
                   <ProfileName accountId={props.signedAccountId} />
 		  
-              <div className="profile-username">{props.signedAccountId}</div>
+              <div className="profile-username">@{props.signedAccountId}</div>
             </Link>
 
           ) : (
@@ -219,7 +226,18 @@ export function Menu(props) {
             />
           )}
 
-<FollowStats accountId={props.signedAccountId} />
+		{props.widgets.followStats && (
+                <div className="follow-stats">
+                  <Widget src={props.widgets.followStats} 
+props={{
+                  accountId: props.signedAccountId,
+                  
+                }}
+/>
+                </div>
+              )}
+
+
         </div>
         {/* Hairline with padding inside */}
         <div className="hairline-wrapper">
