@@ -13,6 +13,7 @@ import { SignInButton } from "../SignInButton";
 import { Link } from "react-router-dom";
 import ProfileImage from "../ui/ProfileImage"; // ✅ Import ProfileImage
 import ProfileName from "../ui/ProfileName";
+import FollowStats from "../ui/FollowStats";
 
 const StyledMenu = styled.div`
   position: fixed;
@@ -205,9 +206,10 @@ export function Menu(props) {
               />
 
                   <ProfileName accountId={props.signedAccountId} />
-
+		  
               <div className="profile-username">{props.signedAccountId}</div>
             </Link>
+
           ) : (
             <SignInButton
               onSignIn={() => {
@@ -216,6 +218,8 @@ export function Menu(props) {
               }}
             />
           )}
+
+<FollowStats accountId={props.signedAccountId} />
         </div>
         {/* Hairline with padding inside */}
         <div className="hairline-wrapper">

@@ -6,8 +6,8 @@ const ProfileName = (props) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Use props.accountId or fallback to context.accountId
-  const accountId = propsAccountId ?? context.accountId;
+  // Use props.accountId or fallback to context.accountId if context is set
+  const accountId = propsAccountId ?? context?.accountId; // Ensure context is available
 
   useEffect(() => {
     if (!accountId) {
