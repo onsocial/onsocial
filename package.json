@@ -28,7 +28,7 @@
     "bn.js": "^5.1.1",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.11.3",
-    "borsh": "^2.0.0",
+    "borsh": "0.7.0",
     "collections": "^5.1.12",
     "dompurify": "^3.0.6",
     "error-polyfill": "^0.1.2",
