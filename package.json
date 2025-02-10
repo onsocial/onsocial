@@ -32,6 +32,7 @@
     "collections": "^5.1.12",
     "dompurify": "^3.0.6",
     "error-polyfill": "^0.1.2",
+    "graphql": "16",
     "local-storage": "^2.0.0",
     "monaco-editor": "^0.52.2",
     "near-api-js": "^2.1.3",
